@@ -1,0 +1,34 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "start",
+      "problemMatcher": [],
+      "label": "Start Production Server",
+      "detail": "npm start"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "group": {
+        "kind": "none",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "Start Development Server",
+      "detail": "npm run dev"
+    },
+    {
+      "type": "npm",
+      "script": "build",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": [],
+      "label": "Build for Production",
+      "detail": "npm run build"
+    }
+  ]
+}

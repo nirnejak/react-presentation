@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "jock.svg",
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

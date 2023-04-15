@@ -1,0 +1,34 @@
+{
+  "typescriptReactFunctionComponent": {
+    "prefix": "rfc",
+    "body": [
+      "import * as React from \"react\"",
+      "",
+      "interface Props {}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<Props> = () => {",
+      "  return <div>${1:first}</div>",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "reactFunctionMemoComponent": {
+    "prefix": "rmc",
+    "body": [
+      "import * as React from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}Base: React.FC = () => {",
+      "  return <div>${1:first}</div>",
+      "}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = React.memo(${1:${TM_FILENAME_BASE}}Base)",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Creates a React Memo Function Component with ES7 module system",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  }
+}
