@@ -9,6 +9,26 @@ interface Props {
 const Presentation: React.FC<Props> = ({ slides }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
 
+  const prevSlide = React.useCallback(() => {
+    setCurrentSlide((slide) => {
+      if (slide === 0) {
+        return slides.length - 1
+      } else {
+        return slide - 1
+      }
+    })
+  }, [slides.length])
+
+  const nextSlide = React.useCallback(() => {
+    setCurrentSlide((slide) => {
+      if (slide === slides.length - 1) {
+        return 0
+      } else {
+        return slide + 1
+      }
+    })
+  }, [slides.length])
+
   React.useEffect(() => {
     const handleKeyboardEvent = (e: KeyboardEvent): void => {
       switch (e.key) {
@@ -28,27 +48,7 @@ const Presentation: React.FC<Props> = ({ slides }) => {
     return () => {
       document.removeEventListener("keyup", handleKeyboardEvent)
     }
-  }, [])
-
-  const prevSlide = (): void => {
-    setCurrentSlide((slide) => {
-      if (slide === 0) {
-        return slides.length - 1
-      } else {
-        return slide - 1
-      }
-    })
-  }
-
-  const nextSlide = (): void => {
-    setCurrentSlide((slide) => {
-      if (slide === slides.length - 1) {
-        return 0
-      } else {
-        return slide + 1
-      }
-    })
-  }
+  }, [prevSlide, nextSlide])
 
   const renderCurrentSlide = (): React.ReactNode => {
     if (!isNaN(currentSlide) && slides.length > 0) {
