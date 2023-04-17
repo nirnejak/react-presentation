@@ -1,46 +1,91 @@
 import * as React from "react"
-import { useInView } from "react-intersection-observer"
 
-import { motion, useAnimation } from "framer-motion"
+import { ChevronLeft, ChevronRight } from "akar-icons"
 import Head from "next/head"
 
+const slides: React.ReactNode[] = []
+
 const Home: React.FC = () => {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
+  const [currentSlide, setCurrentSlide] = React.useState(0)
 
   React.useEffect(() => {
-    if (inView) {
-      controls.start("visible").catch((err) => {
-        console.log(err)
-      })
+    const handleKeyboardEvent = (e: KeyboardEvent): void => {
+      switch (e.key) {
+        case "ArrowLeft":
+        case "A":
+        case "a":
+          prevSlide()
+          break
+        case "ArrowRight":
+        case "B":
+        case "b":
+          nextSlide()
+          break
+      }
     }
-  }, [controls, inView])
+    document.addEventListener("keyup", handleKeyboardEvent)
+    return () => {
+      document.removeEventListener("keyup", handleKeyboardEvent)
+    }
+  }, [])
 
-  const variants = {
-    visible: { opacity: 1, translateY: 0 },
-    hidden: { opacity: 0, translateY: 10 },
+  const prevSlide = (): void => {
+    setCurrentSlide((slide) => {
+      if (slide === 0) {
+        return slides.length - 1
+      } else {
+        return slide - 1
+      }
+    })
+  }
+
+  const nextSlide = (): void => {
+    setCurrentSlide((slide) => {
+      if (slide === slides.length - 1) {
+        return 0
+      } else {
+        return slide + 1
+      }
+    })
+  }
+
+  const renderCurrentSlide = (): React.ReactNode => {
+    if (!isNaN(currentSlide) && slides.length > 0) {
+      return slides[currentSlide]
+    } else {
+      return null
+    }
   }
 
   return (
     <div>
       <Head>
-        <title>Next.js App</title>
+        <title>React Presentation</title>
         <meta name="description" content="Next.js Typescript Starter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <motion.main
-        animate={controls}
-        initial="hidden"
-        transition={{ delay: 0, duration: 0.15, type: "spring" }}
-        variants={variants}
-        ref={ref}
-        className="grid h-screen place-content-center"
-      >
-        <h1 className="text-center text-8xl font-bold text-slate-800">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-      </motion.main>
+      <section className="relative grid h-screen place-content-center">
+        <div>{renderCurrentSlide()}</div>
+        <div className="absolute bottom-4 right-4 flex gap-2">
+          <button
+            className="rounded-full bg-gray-300 p-3 text-gray-800"
+            onClick={() => {
+              prevSlide()
+            }}
+          >
+            <ChevronLeft size={15} />
+          </button>
+          <button
+            className="rounded-full bg-gray-300 p-3 text-gray-800"
+            onClick={() => {
+              nextSlide()
+            }}
+          >
+            <ChevronRight size={15} />
+          </button>
+        </div>
+      </section>
     </div>
   )
 }
