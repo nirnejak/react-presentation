@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-typescript-starter",
+  "name": "react-presentation",
   "description": "Next.js TypeScript Starter",
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
@@ -64,9 +64,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter"
+    "url": "https://github.com/nirnejak/react-presentation"
   },
   "bugs": {
-    "url": "https://github.com/nirnejak/nextjs-typescript-starter/issues"
+    "url": "https://github.com/nirnejak/react-presentation/issues"
   }
 }
