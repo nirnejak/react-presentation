@@ -3,7 +3,7 @@ import * as React from "react"
 import { ChevronLeft, ChevronRight } from "akar-icons"
 import Head from "next/head"
 
-const slides: React.ReactNode[] = []
+const slides: Array<{ component: React.ReactNode }> = []
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
@@ -51,7 +51,7 @@ const Home: React.FC = () => {
 
   const renderCurrentSlide = (): React.ReactNode => {
     if (!isNaN(currentSlide) && slides.length > 0) {
-      return slides[currentSlide]
+      return slides[currentSlide].component
     } else {
       return null
     }
