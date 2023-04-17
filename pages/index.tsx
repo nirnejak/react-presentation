@@ -3,11 +3,19 @@ import * as React from "react"
 import { ChevronLeft, ChevronRight } from "akar-icons"
 import Head from "next/head"
 
-import First from "components/Slides/Cover"
+import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
 
 const slides: Array<{ component: React.ReactNode }> = [
-  { component: <First title="Welcome" subtitle="Let's get started!" /> },
+  {
+    component: (
+      <Cover
+        title="Welcome"
+        subtitle="Let's get started!"
+        className="w-[680px] text-center"
+      />
+    ),
+  },
   { component: <End username="nirnejak" /> },
 ]
 
