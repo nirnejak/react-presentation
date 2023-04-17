@@ -4,11 +4,10 @@
 
 ---
 
-## Included
+## Included Components
 
-- `_document.tsx` file with basic Metadata
-- `manifest.json` for site info
-- `classnames` util for easily managing classes
+- `<Cover />` - A Cover slide component with the title and subtitle
+- `<End />` - A Outro slide component with social details
 
 ## Additional Packages Used
 
