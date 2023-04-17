@@ -3,7 +3,13 @@ import * as React from "react"
 import { ChevronLeft, ChevronRight } from "akar-icons"
 import Head from "next/head"
 
-const slides: Array<{ component: React.ReactNode }> = []
+import First from "components/Slides/Cover"
+import End from "components/Slides/End"
+
+const slides: Array<{ component: React.ReactNode }> = [
+  { component: <First title="Welcome" subtitle="Let's get started!" /> },
+  { component: <End username="nirnejak" /> },
+]
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
