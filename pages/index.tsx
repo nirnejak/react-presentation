@@ -24,9 +24,13 @@ const Home: React.FC = () => {
     <div>
       <Head>
         <title>React Presentation</title>
-        <meta name="description" content="Next.js Typescript Starter" />
+        <meta
+          name="description"
+          content="Use your React components as presentation slides"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <Presentation slides={slides} />
     </div>
   )
