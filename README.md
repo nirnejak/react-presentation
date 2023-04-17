@@ -1,5 +1,5 @@
 <h1 align="center">
-  Next.js TypeScript Starter
+  React Presentation Maker
 </h1>
 
 ---
@@ -14,7 +14,6 @@
 
 - Tailwind CSS - for styling
 - Framer Motion - for animations
-- React Query - for data fetching and caching
 - use-sound - for using sound effects
 
 ## Available Scripts
