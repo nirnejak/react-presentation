@@ -12,7 +12,7 @@ const slides: Array<{ component: React.ReactNode }> = [
       <Cover
         title="Welcome"
         subtitle="Let's get started!"
-        className="w-[680px] text-center"
+        className="w-[680px]"
       />
     ),
   },
