@@ -6,8 +6,8 @@
 
 ## Included Components
 
-- `<Cover />` - A Cover slide component with the title and subtitle
-- `<End />` - A Outro slide component with social details
+- `<Cover />` - A cover slide component with the title and subtitle
+- `<End />` - An outro slide component with social details
 
 ## Additional Packages Used
 
