@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+  cursor: url("../assets/icons/circle.svg") 15 15, auto !important;
+}
