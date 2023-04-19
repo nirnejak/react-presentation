@@ -31,7 +31,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
     <motion.div
       animate={controls}
       initial="hidden"
-      transition={{ delay: 0, duration: 0.15, type: "spring" }}
+      transition={{ delay: 0, duration: 0.4, type: "spring" }}
       variants={variants}
       ref={ref}
       className={classNames("w-[400px]", className)}

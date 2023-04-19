@@ -32,7 +32,7 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
     <motion.div
       animate={controls}
       initial="hidden"
-      transition={{ delay: 0, duration: 0.15, type: "spring" }}
+      transition={{ delay: 0, duration: 0.4, type: "spring" }}
       variants={variants}
       ref={ref}
       className={classNames("text-center", className)}
