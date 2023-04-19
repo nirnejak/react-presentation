@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -15,7 +15,7 @@
   "dependencies": {
     "akar-icons": "^1.9.25",
     "dotenv": "^16.0.3",
-    "framer-motion": "^10.12.3",
+    "framer-motion": "^10.12.4",
     "next": "^13.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
