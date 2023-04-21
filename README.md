@@ -4,11 +4,15 @@
 
 ---
 
-## Included Components
+## Included Slide Components
 
 - `<Cover />` - A cover slide component with the title and subtitle
 - `<About />` - A slide component to tell about yourself
 - `<End />` - An outro slide component with social details
+
+## Other Included Components
+
+- `<Wrapper></Wrapper>` - A wrapper components with appropriate spacing to wrap your slide/regular components
 
 ## Additional Packages Used
 
