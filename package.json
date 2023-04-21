@@ -24,7 +24,7 @@
     "use-sound": "^4.0.1"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
+    "@types/node": "^18.15.13",
     "@types/react": "^18.0.37",
     "@typescript-eslint/eslint-plugin": "^5.59.0",
     "@typescript-eslint/parser": "^5.59.0",
@@ -41,7 +41,7 @@
     "eslint-plugin-tailwindcss": "^3.11.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
-    "postcss": "^8.4.22",
+    "postcss": "^8.4.23",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "tailwindcss": "^3.3.1",
