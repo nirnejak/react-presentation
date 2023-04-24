@@ -2,6 +2,7 @@ import * as React from "react"
 
 import Head from "next/head"
 
+import Buttons from "components/demo/Buttons"
 import Presentation from "components/Presentation"
 import About from "components/Slides/About"
 import Cover from "components/Slides/Cover"
@@ -26,6 +27,7 @@ const slides: Array<{ component: React.ReactNode }> = [
       />
     ),
   },
+  { component: <Buttons /> },
   { component: <End username="nirnejak" /> },
 ]
 
