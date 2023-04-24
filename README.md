@@ -16,10 +16,10 @@
 
 ## Additional Packages Used
 
-- Tailwind CSS - for styling
-- Framer Motion - for animations
-- Akar Icons - for icons
-- use-sound - for using sound effects
+- **Tailwind CSS** - for styling
+- **Framer Motion** - for animations
+- **Akar Icons** - for icons
+- **use-sound** - for using sound effects
 
 ## Available Scripts
 
