@@ -71,7 +71,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Satoshi", "Inter"],
+      sans: ["var(--font-satoshi)", "Inter"],
     },
   },
   variants: {
