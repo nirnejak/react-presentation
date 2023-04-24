@@ -34,7 +34,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
       transition={{ delay: 0, duration: 0.4, type: "spring" }}
       variants={variants}
       ref={ref}
-      className={classNames("w-[400px]", className)}
+      className={classNames("w-[680px]", className)}
     >
       <h1 className="text-5xl font-bold text-gray-900">Thank You</h1>
       <div className="mt-10 flex flex-col gap-3 text-3xl text-gray-400">
