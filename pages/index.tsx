@@ -46,7 +46,7 @@ const Home: React.FC = () => {
       <Presentation
         slides={slides}
         showControls={true}
-        sourceLink="nirnejak/react-presentation"
+        sourceLink="nirnejak/react-presentation" // format: '<username>/<repository>'
       />
     </div>
   )

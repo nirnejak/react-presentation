@@ -69,10 +69,14 @@ const Presentation: React.FC<Props> = ({
       <div>{renderCurrentSlide()}</div>
       <div className="absolute bottom-4 right-0 flex w-full items-end px-4">
         {sourceLink !== undefined && (
-          <div className="flex items-center gap-0.5 text-gray-600">
+          <a
+            href={`https://github.com/${sourceLink}/`}
+            target="_blank"
+            className="flex items-center gap-0.5 text-gray-600"
+          >
             <GithubFill size={15} />
-            <span>nirnejak/react-presentation</span>
-          </div>
+            <span>{sourceLink}</span>
+          </a>
         )}
         {showControls && (
           <div className="ml-auto flex gap-2">
