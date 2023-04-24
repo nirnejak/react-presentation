@@ -37,11 +37,11 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
       ref={ref}
       className={classNames("text-center", className)}
     >
-      <h1 className="text-3xl font-bold leading-normal text-gray-900">
+      <h1 className="text-6xl font-bold leading-normal text-gray-900">
         {title}
       </h1>
       {subtitle !== undefined && (
-        <p className="mt-4 leading-normal text-gray-500">{subtitle}</p>
+        <p className="mt-4 text-3xl leading-normal text-gray-500">{subtitle}</p>
       )}
     </motion.div>
   )
