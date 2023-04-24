@@ -27,7 +27,7 @@ const slides: Array<{ component: React.ReactNode }> = [
       />
     ),
   },
-  { component: <Buttons /> },
+  { component: <Buttons /> }, // INFO: Demo component
   { component: <End username="nirnejak" /> },
 ]
 
