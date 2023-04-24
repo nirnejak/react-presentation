@@ -4,10 +4,15 @@ import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
 
 interface Props {
   slides: Array<{ component: React.ReactNode }>
+  showControls?: boolean
   sourceLink?: string
 }
 
-const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
+const Presentation: React.FC<Props> = ({
+  slides,
+  sourceLink,
+  showControls = true,
+}) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
 
   const prevSlide = React.useCallback(() => {
@@ -69,24 +74,26 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
             <span>nirnejak/react-presentation</span>
           </div>
         )}
-        <div className="ml-auto flex gap-2">
-          <button
-            className="rounded-full bg-gray-300 p-3 text-gray-800"
-            onClick={() => {
-              prevSlide()
-            }}
-          >
-            <ChevronLeft size={15} />
-          </button>
-          <button
-            className="rounded-full bg-gray-300 p-3 text-gray-800"
-            onClick={() => {
-              nextSlide()
-            }}
-          >
-            <ChevronRight size={15} />
-          </button>
-        </div>
+        {showControls && (
+          <div className="ml-auto flex gap-2">
+            <button
+              className="rounded-full bg-gray-300 p-3 text-gray-800"
+              onClick={() => {
+                prevSlide()
+              }}
+            >
+              <ChevronLeft size={15} />
+            </button>
+            <button
+              className="rounded-full bg-gray-300 p-3 text-gray-800"
+              onClick={() => {
+                nextSlide()
+              }}
+            >
+              <ChevronRight size={15} />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   )
