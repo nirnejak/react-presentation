@@ -77,7 +77,7 @@ const Presentation: React.FC<Props> = ({
         {showControls && (
           <div className="ml-auto flex gap-2">
             <button
-              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400"
+              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
               onClick={() => {
                 prevSlide()
               }}
@@ -85,7 +85,7 @@ const Presentation: React.FC<Props> = ({
               <ChevronLeft size={15} />
             </button>
             <button
-              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400"
+              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
               onClick={() => {
                 nextSlide()
               }}
