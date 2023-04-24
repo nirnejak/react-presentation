@@ -36,8 +36,8 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
       ref={ref}
       className={classNames("w-[400px]", className)}
     >
-      <h1 className="text-3xl font-bold text-gray-900">Thank You</h1>
-      <div className="mt-10 flex flex-col gap-2 text-gray-400">
+      <h1 className="text-5xl font-bold text-gray-900">Thank You</h1>
+      <div className="mt-10 flex flex-col gap-3 text-3xl text-gray-400">
         <p>
           <span className="text-gray-900">{username}</span>.com
         </p>
