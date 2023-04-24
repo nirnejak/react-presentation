@@ -1,12 +1,13 @@
 import * as React from "react"
 
-import { ChevronLeft, ChevronRight } from "akar-icons"
+import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
 
 interface Props {
   slides: Array<{ component: React.ReactNode }>
+  sourceLink?: string
 }
 
-const Presentation: React.FC<Props> = ({ slides }) => {
+const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
 
   const prevSlide = React.useCallback(() => {
@@ -61,23 +62,31 @@ const Presentation: React.FC<Props> = ({ slides }) => {
   return (
     <section className="relative grid h-screen place-content-center">
       <div>{renderCurrentSlide()}</div>
-      <div className="absolute bottom-4 right-4 flex gap-2">
-        <button
-          className="rounded-full bg-gray-300 p-3 text-gray-800"
-          onClick={() => {
-            prevSlide()
-          }}
-        >
-          <ChevronLeft size={15} />
-        </button>
-        <button
-          className="rounded-full bg-gray-300 p-3 text-gray-800"
-          onClick={() => {
-            nextSlide()
-          }}
-        >
-          <ChevronRight size={15} />
-        </button>
+      <div className="absolute bottom-4 right-0 flex w-full items-end px-4">
+        {sourceLink !== undefined && (
+          <div className="flex items-center gap-0.5 text-gray-600">
+            <GithubFill size={15} />
+            <span>nirnejak/react-presentation</span>
+          </div>
+        )}
+        <div className="ml-auto flex gap-2">
+          <button
+            className="rounded-full bg-gray-300 p-3 text-gray-800"
+            onClick={() => {
+              prevSlide()
+            }}
+          >
+            <ChevronLeft size={15} />
+          </button>
+          <button
+            className="rounded-full bg-gray-300 p-3 text-gray-800"
+            onClick={() => {
+              nextSlide()
+            }}
+          >
+            <ChevronRight size={15} />
+          </button>
+        </div>
       </div>
     </section>
   )

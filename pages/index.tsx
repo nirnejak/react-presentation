@@ -43,7 +43,7 @@ const Home: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Presentation slides={slides} />
+      <Presentation slides={slides} sourceLink="nirnejak/react-presentation" />
     </div>
   )
 }
