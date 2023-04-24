@@ -11,11 +11,11 @@ const satoshi = localFont({
   variable: "--font-satoshi",
   src: [
     {
-      path: "./Satoshi-Variable.woff2",
+      path: "../fonts/Satoshi-Variable.woff2",
       style: "normal",
     },
     {
-      path: "./Satoshi-VariableItalic.woff2",
+      path: "../fonts/Satoshi-VariableItalic.woff2",
       style: "italic",
     },
   ],
