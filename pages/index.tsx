@@ -45,7 +45,7 @@ const Home: React.FC = () => {
 
       <Presentation
         slides={slides}
-        showControls={false}
+        showControls={true}
         sourceLink="nirnejak/react-presentation"
       />
     </div>
