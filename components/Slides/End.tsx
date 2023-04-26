@@ -23,35 +23,56 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
   }, [controls, inView])
 
   const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
+    hidden: { translateY: 10, opacity: 0 },
+    visible: { translateY: 0, opacity: 1 },
   }
 
   return (
-    <motion.div
-      animate={controls}
-      initial="hidden"
-      transition={{ delay: 0, duration: 0.4, type: "spring" }}
-      variants={variants}
-      ref={ref}
-      className={classNames("w-[680px]", className)}
-    >
-      <h1 className="text-5xl font-bold text-gray-900">Thank You</h1>
+    <div ref={ref} className={classNames("w-[680px]", className)}>
+      <motion.h1
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        className="text-5xl font-bold text-gray-900"
+      >
+        Thank You
+      </motion.h1>
       <div className="mt-10 flex flex-col gap-3 text-3xl text-gray-400">
-        <p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
+        >
           <span className="text-gray-900">{username}</span>.com
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          transition={{ delay: 0.15, duration: 0.4, type: "spring" }}
+        >
           twitter.com/<span className="text-gray-900">{username}</span>
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          transition={{ delay: 0.2, duration: 0.4, type: "spring" }}
+        >
           github.com/<span className="text-gray-900">{username}</span>
-        </p>
-        <p>
+        </motion.p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          transition={{ delay: 0.25, duration: 0.4, type: "spring" }}
+        >
           dribbble.com/<span className="text-gray-900">{username}</span>
-        </p>
+        </motion.p>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
