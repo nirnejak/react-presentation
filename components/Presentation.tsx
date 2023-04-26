@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
 interface Props {
   slides: Array<{ component: React.ReactNode }>
   showControls?: boolean
+  showPages?: boolean
   sourceLink?: string
 }
 
@@ -12,6 +13,7 @@ const Presentation: React.FC<Props> = ({
   slides,
   sourceLink,
   showControls = true,
+  showPages = false,
 }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
 
@@ -78,26 +80,34 @@ const Presentation: React.FC<Props> = ({
             <span>{sourceLink}</span>
           </a>
         )}
-        {showControls && (
-          <div className="ml-auto flex gap-2">
-            <button
-              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
-              onClick={() => {
-                prevSlide()
-              }}
-            >
-              <ChevronLeft size={15} />
-            </button>
-            <button
-              className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
-              onClick={() => {
-                nextSlide()
-              }}
-            >
-              <ChevronRight size={15} />
-            </button>
-          </div>
-        )}
+
+        <div className="ml-auto flex items-center gap-2">
+          {showPages && (
+            <p className="mr-4 text-sm text-gray-600">
+              {currentSlide + 1}/{slides.length}
+            </p>
+          )}
+          {showControls && (
+            <>
+              <button
+                className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                onClick={() => {
+                  prevSlide()
+                }}
+              >
+                <ChevronLeft size={15} />
+              </button>
+              <button
+                className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                onClick={() => {
+                  nextSlide()
+                }}
+              >
+                <ChevronRight size={15} />
+              </button>
+            </>
+          )}
+        </div>
       </div>
     </section>
   )
