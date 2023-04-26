@@ -23,8 +23,8 @@ const Wrapper: React.FC<Props> = ({ children, className }) => {
   }, [controls, inView])
 
   const variants = {
-    hidden: { translate: 10, opacity: 0 },
-    visible: { translate: 0, opacity: 1 },
+    hidden: { translateY: 10, opacity: 0 },
+    visible: { translateY: 0, opacity: 1 },
   }
 
   return (
