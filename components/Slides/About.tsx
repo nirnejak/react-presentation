@@ -31,20 +31,20 @@ const About: React.FC<Props> = ({ title, subtitle, className }) => {
   return (
     <div ref={ref} className={classNames("", className)}>
       <motion.h1
-        animate={controls}
         initial="hidden"
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        animate={controls}
         variants={variants}
+        transition={{ delay: 0, duration: 0.4, type: "spring" }}
         className="text-5xl font-bold leading-normal text-gray-900"
       >
         {title}
       </motion.h1>
       {subtitle !== undefined && (
         <motion.p
-          animate={controls}
           initial="hidden"
-          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
+          animate={controls}
           variants={variants}
+          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
           className="mt-4 text-3xl leading-normal text-gray-500"
         >
           {subtitle}
