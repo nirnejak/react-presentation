@@ -50,8 +50,8 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
           prevSlide()
           break
         case "ArrowRight":
-        case "B":
-        case "b":
+        case "D":
+        case "d":
           nextSlide()
           break
         case "C":
