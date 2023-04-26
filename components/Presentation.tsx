@@ -2,20 +2,24 @@ import * as React from "react"
 
 import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
 
+const config = {
+  isControlVisible: true,
+  isPageNumberVisible: false,
+}
+
 interface Props {
   slides: Array<{ component: React.ReactNode }>
-  showControls?: boolean
-  showPages?: boolean
   sourceLink?: string
 }
 
-const Presentation: React.FC<Props> = ({
-  slides,
-  sourceLink,
-  showControls = true,
-  showPages = false,
-}) => {
+const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [isControlVisible, setIsControlVisible] = React.useState(
+    config.isControlVisible
+  )
+  const [isPageNumberVisible, setIsPageNumberVisible] = React.useState(
+    config.isPageNumberVisible
+  )
 
   const prevSlide = React.useCallback(() => {
     setCurrentSlide((slide) => {
@@ -50,13 +54,21 @@ const Presentation: React.FC<Props> = ({
         case "b":
           nextSlide()
           break
+        case "C":
+        case "c":
+          setIsControlVisible(!isControlVisible)
+          break
+        case "P":
+        case "p":
+          setIsPageNumberVisible(!isPageNumberVisible)
+          break
       }
     }
     document.addEventListener("keyup", handleKeyboardEvent)
     return () => {
       document.removeEventListener("keyup", handleKeyboardEvent)
     }
-  }, [prevSlide, nextSlide])
+  }, [prevSlide, nextSlide, isControlVisible, isPageNumberVisible])
 
   const renderCurrentSlide = (): React.ReactNode => {
     if (!isNaN(currentSlide) && slides.length > 0) {
@@ -82,12 +94,12 @@ const Presentation: React.FC<Props> = ({
         )}
 
         <div className="ml-auto flex items-center gap-2">
-          {showPages && (
+          {isPageNumberVisible && (
             <p className="mr-4 text-sm text-gray-600">
               {currentSlide + 1}/{slides.length}
             </p>
           )}
-          {showControls && (
+          {isControlVisible && (
             <>
               <button
                 className="rounded-full bg-gray-300 p-3 text-gray-800 outline-none hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
