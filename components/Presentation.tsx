@@ -105,7 +105,6 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
               <span>{sourceLink}</span>
             </a>
           )}
-          f
           <div className="ml-auto flex items-center gap-2">
             {isPageNumberVisible && (
               <p className="mr-4 text-sm text-gray-600">
