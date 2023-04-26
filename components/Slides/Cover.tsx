@@ -24,26 +24,33 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
   }, [controls, inView])
 
   const variants = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
+    hidden: { translateY: 10, opacity: 0 },
+    visible: { translateY: 0, opacity: 1 },
   }
 
   return (
-    <motion.div
-      animate={controls}
-      initial="hidden"
-      transition={{ delay: 0, duration: 0.4, type: "spring" }}
-      variants={variants}
-      ref={ref}
-      className={classNames("text-center", className)}
-    >
-      <h1 className="text-6xl font-bold leading-normal text-gray-900">
+    <div ref={ref} className={classNames("text-center", className)}>
+      <motion.h1
+        initial="hidden"
+        animate={controls}
+        variants={variants}
+        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        className="text-6xl font-bold leading-normal text-gray-900"
+      >
         {title}
-      </h1>
+      </motion.h1>
       {subtitle !== undefined && (
-        <p className="mt-4 text-3xl leading-normal text-gray-500">{subtitle}</p>
+        <motion.p
+          initial="hidden"
+          animate={controls}
+          variants={variants}
+          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
+          className="mt-4 text-3xl leading-normal text-gray-500"
+        >
+          {subtitle}
+        </motion.p>
       )}
-    </motion.div>
+    </div>
   )
 }
 
