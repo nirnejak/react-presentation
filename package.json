@@ -13,7 +13,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "akar-icons": "^1.9.26",
+    "akar-icons": "^1.9.27",
     "dotenv": "^16.0.3",
     "framer-motion": "^10.12.8",
     "next": "^13.4.1",
