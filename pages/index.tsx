@@ -7,6 +7,7 @@ import Presentation from "components/Presentation"
 import About from "components/Slides/About"
 import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
+import CodeBlock from "components/Slides/CodeBlock"
 
 const slides: Array<{ component: React.ReactNode }> = [
   {
@@ -14,6 +15,29 @@ const slides: Array<{ component: React.ReactNode }> = [
       <Cover
         title="Welcome"
         subtitle="Let's get started!"
+        className="w-[680px]"
+      />
+    ),
+  },
+  {
+    component: (
+      <CodeBlock
+        title="Input.tsx"
+        code={`
+        import * as React from "react"
+
+        interface Props {
+          name: string
+        }
+
+        const Input: React.FC<Props> = ({ name }) => {
+          return <div>
+            <input type="text" value={name} />
+          </div>
+        }
+
+        export default Input
+        `}
         className="w-[680px]"
       />
     ),
