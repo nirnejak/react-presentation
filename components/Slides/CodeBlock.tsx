@@ -47,9 +47,9 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-        className="mt-4 text-sm bg-gray-200 rounded-2xl text-white min-h-[400px] pt-12"
+        className="mt-4 text-sm bg-gray-200 rounded-2xl text-white min-h-[400px] py-5 max-w-[670px] overflow-auto"
       >
-        <pre>
+        <pre className="-ml-8">
           <code dangerouslySetInnerHTML={{ __html: codeHTML }} />
         </pre>
       </motion.div>
