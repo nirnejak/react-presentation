@@ -22,21 +22,39 @@ const slides: Array<{ component: React.ReactNode }> = [
   {
     component: (
       <CodeBlock
-        title="Input.tsx"
+        title="Toggle.tsx"
         code={`
         import * as React from "react"
 
-        interface Props {
-          name: string
+        const Counter: React.FC = () => {
+          const [count, setCount] = React.useState(0)
+
+          return (
+            <div className="flex justify-center">
+              <div className="flex items-center gap-4">
+                <button
+                  className="select-none rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all hover:bg-gray-900 active:scale-95"
+                  onClick={() => {
+                    setCount(count - 1)
+                  }}
+                >
+                  -
+                </button>
+                <p>Count is {count}</p>
+                <button
+                  className="select-none rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all hover:bg-gray-900 active:scale-95"
+                  onClick={() => {
+                    setCount(count + 1)
+                  }}
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          )
         }
 
-        const Input: React.FC<Props> = ({ name }) => {
-          return <div>
-            <input type="text" value={name} />
-          </div>
-        }
-
-        export default Input
+        export default Counter;
         `}
         className="w-[680px]"
       />
