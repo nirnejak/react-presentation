@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Head from "next/head"
 
-import Buttons from "components/demo/Buttons"
+import Counter from "components/demo/Counter"
 import Presentation from "components/Presentation"
 import About from "components/Slides/About"
 import Cover from "components/Slides/Cover"
@@ -22,7 +22,7 @@ const slides: Array<{ component: React.ReactNode }> = [
   {
     component: (
       <CodeBlock
-        title="Toggle.tsx"
+        title="Counter.tsx"
         code={`
         import * as React from "react"
 
@@ -60,7 +60,7 @@ const slides: Array<{ component: React.ReactNode }> = [
       />
     ),
   },
-  { component: <Buttons /> }, // INFO: Demo component
+  { component: <Counter /> }, // INFO: Demo component
   {
     component: (
       <About

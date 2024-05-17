@@ -2,7 +2,7 @@ import * as React from "react"
 
 import Wrapper from "components/Wrapper"
 
-const Buttons: React.FC = () => {
+const Counter: React.FC = () => {
   const [count, setCount] = React.useState(0)
 
   return (
@@ -30,4 +30,4 @@ const Buttons: React.FC = () => {
   )
 }
 
-export default Buttons
+export default Counter
