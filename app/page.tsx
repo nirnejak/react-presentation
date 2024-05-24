@@ -29,6 +29,15 @@ const slides: Array<{ component: React.ReactNode }> = [
   },
   {
     component: (
+      <QuoteBlock
+        quote="The most disastrous thing that you can ever learn is your first programming language"
+        author="Alan Kay"
+        className="w-[680px]"
+      />
+    ),
+  },
+  {
+    component: (
       <CodeBlock
         title="Counter.tsx"
         code={`
@@ -64,15 +73,6 @@ const slides: Array<{ component: React.ReactNode }> = [
 
         export default Counter;
         `}
-        className="w-[680px]"
-      />
-    ),
-  },
-  {
-    component: (
-      <QuoteBlock
-        quote="The most disastrous thing that you can ever learn is your first programming language"
-        author="Alan Kay"
         className="w-[680px]"
       />
     ),
