@@ -15,10 +15,10 @@
 }
 
 code {
-  p,
-  span,
-  div {
-    font-family: monospace;
+  @apply font-mono;
+
+  * {
+    @apply font-mono;
   }
 }
 

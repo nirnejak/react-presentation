@@ -28,12 +28,28 @@ const sansFont = localFont({
   ],
 })
 
+const monoFont = localFont({
+  variable: "--mono-font",
+  src: [
+    {
+      path: "../fonts/JetBrainsMono-Regular.ttf",
+      style: "normal",
+    },
+  ],
+})
+
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
       <head></head>
 
-      <body className={classNames(sansFont.variable, "overflow-x-hidden")}>
+      <body
+        className={classNames(
+          sansFont.variable,
+          monoFont.variable,
+          "overflow-x-hidden"
+        )}
+      >
         {children}
       </body>
     </html>

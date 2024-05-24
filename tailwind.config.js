@@ -73,6 +73,7 @@ module.exports = {
     },
     fontFamily: {
       sans: ["var(--sans-font)", "Inter", "system-ui"],
+      mono: ["var(--mono-font)"],
     },
   },
   variants: {
