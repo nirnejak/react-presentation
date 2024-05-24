@@ -11,7 +11,7 @@ const Counter: React.FC = () => {
         <button
           className="select-none rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all hover:bg-gray-900 active:scale-95"
           onClick={() => {
-            if (count > 0) setCount(count - 1)
+            count > 0 && setCount(count - 1)
           }}
         >
           -
