@@ -1,6 +1,5 @@
 import * as React from "react"
-
-import Head from "next/head"
+import { Metadata } from "next"
 
 import Counter from "components/demo/Counter"
 import Presentation from "components/Presentation"
@@ -9,6 +8,14 @@ import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
 import CodeBlock from "components/Slides/CodeBlock"
 import QuoteBlock from "components/Slides/QuoteBlock"
+
+import generateMetadata from "utils/seo"
+
+export const metadata: Metadata = generateMetadata({
+  path: "/",
+  title: "React Presentation",
+  description: "Use your React components as presentation slides",
+})
 
 const slides: Array<{ component: React.ReactNode }> = [
   {
@@ -86,15 +93,6 @@ const slides: Array<{ component: React.ReactNode }> = [
 const Home: React.FC = () => {
   return (
     <div>
-      <Head>
-        <title>React Presentation</title>
-        <meta
-          name="description"
-          content="Use your React components as presentation slides"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Presentation
         slides={slides}
         sourceLink="nirnejak/react-presentation" // format: '<username>/<repository>'
