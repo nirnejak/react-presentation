@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 
 import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
