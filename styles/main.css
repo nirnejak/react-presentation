@@ -14,6 +14,14 @@
     auto !important;
 }
 
+code {
+  p,
+  span,
+  div {
+    font-family: monospace;
+  }
+}
+
 :root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;
