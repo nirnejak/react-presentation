@@ -12,6 +12,7 @@
   cursor:
     url("../assets/icons/circle.svg") 15 15,
     auto !important;
+  -webkit-font-smoothing: antialiased;
 }
 
 code {
