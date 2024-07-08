@@ -1,5 +1,7 @@
 import * as React from "react"
+
 import type { Viewport } from "next"
+
 import localFont from "next/font/local"
 
 import classNames from "utils/classNames"
@@ -41,7 +43,13 @@ const monoFont = localFont({
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
     <html lang="en">
-      <head></head>
+      <head>
+        <script
+          defer
+          data-domain="react-presentation-maker.vercel.app"
+          src="https://plausible.io/js/script.js"
+        />
+      </head>
 
       <body
         className={classNames(
