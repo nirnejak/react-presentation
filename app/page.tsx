@@ -1,14 +1,14 @@
 import * as React from "react"
-import { Metadata } from "next"
+
+import { type Metadata } from "next"
 
 import Counter from "components/demo/Counter"
 import Presentation from "components/Presentation"
 import About from "components/Slides/About"
+import CodeBlock from "components/Slides/CodeBlock"
 import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
-import CodeBlock from "components/Slides/CodeBlock"
 import QuoteBlock from "components/Slides/QuoteBlock"
-
 import generateMetadata from "utils/seo"
 
 export const metadata: Metadata = generateMetadata({
@@ -17,30 +17,23 @@ export const metadata: Metadata = generateMetadata({
   description: "Use your React components as presentation slides",
 })
 
-const slides: Array<{ component: React.ReactNode }> = [
-  {
-    component: (
-      <Cover
-        title="Welcome"
-        subtitle="Let's get started!"
-        className="w-[680px]"
-      />
-    ),
-  },
-  {
-    component: (
-      <QuoteBlock
-        quote="The most disastrous thing that you can ever learn is your first programming language"
-        author="Alan Kay"
-        className="w-[680px]"
-      />
-    ),
-  },
-  {
-    component: (
-      <CodeBlock
-        title="Counter.tsx"
-        code={`
+const slides: React.ReactNode[] = [
+  <Cover
+    key="cover"
+    title="Welcome"
+    subtitle="Let's get started!"
+    className="w-[680px]"
+  />,
+  <QuoteBlock
+    key="quote"
+    quote="The most disastrous thing that you can ever learn is your first programming language"
+    author="Alan Kay"
+    className="w-[680px]"
+  />,
+  <CodeBlock
+    key="code"
+    title="Counter.tsx"
+    code={`
         import * as React from "react"
 
         const Counter: React.FC = () => {
@@ -73,21 +66,16 @@ const slides: Array<{ component: React.ReactNode }> = [
 
         export default Counter;
         `}
-        className="w-[680px]"
-      />
-    ),
-  },
-  { component: <Counter /> }, // INFO: Demo component
-  {
-    component: (
-      <About
-        title="Jitendra Nirnejak"
-        subtitle="Designer and Developer"
-        className="w-[680px]"
-      />
-    ),
-  },
-  { component: <End username="nirnejak" /> },
+    className="w-[680px]"
+  />,
+  <Counter key="counter" />, // INFO: Demo component
+  <About
+    key="about"
+    title="Jitendra Nirnejak"
+    subtitle="Designer and Developer"
+    className="w-[680px]"
+  />,
+  <End key="end" username="nirnejak" />,
 ]
 
 const Home: React.FC = () => {

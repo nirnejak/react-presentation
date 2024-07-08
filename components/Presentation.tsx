@@ -9,7 +9,7 @@ const config = {
 }
 
 interface Props {
-  slides: Array<{ component: React.ReactNode }>
+  slides: React.ReactNode[]
   sourceLink?: string
 }
 
@@ -85,7 +85,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
 
   const renderCurrentSlide = (): React.ReactNode => {
     if (!isNaN(currentSlide) && slides.length > 0) {
-      return slides[currentSlide].component
+      return slides[currentSlide]
     } else {
       return null
     }
