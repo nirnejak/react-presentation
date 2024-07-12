@@ -15,11 +15,11 @@
   "dependencies": {
     "akar-icons": "^1.9.31",
     "dotenv": "^16.4.5",
-    "framer-motion": "^11.2.13",
-    "next": "^14.2.4",
+    "framer-motion": "^11.3.2",
+    "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-intersection-observer": "^9.10.3",
+    "react-intersection-observer": "^9.13.0",
     "sharp": "^0.33.4",
     "sugar-high": "^0.7.0",
     "use-sound": "^4.0.3"
@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "^7.16.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.2.4",
+    "eslint-config-next": "^14.2.5",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-standard-with-typescript": "^43.0.1",
     "eslint-plugin-import": "^2.29.1",
