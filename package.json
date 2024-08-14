@@ -15,7 +15,7 @@
   "dependencies": {
     "akar-icons": "^1.9.31",
     "dotenv": "^16.4.5",
-    "framer-motion": "^11.3.24",
+    "framer-motion": "^11.3.27",
     "next": "^14.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -25,7 +25,7 @@
     "use-sound": "^4.0.3"
   },
   "devDependencies": {
-    "@types/node": "^20.14.14",
+    "@types/node": "^22.3.0",
     "@types/react": "^18.3.3",
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -42,11 +42,11 @@
     "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-tailwindcss": "^3.17.4",
     "husky": "^9.1.4",
-    "lint-staged": "^15.2.8",
+    "lint-staged": "^15.2.9",
     "postcss": "^8.4.41",
     "prettier": "^3.3.3",
-    "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.9",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4"
   },
   "lint-staged": {
