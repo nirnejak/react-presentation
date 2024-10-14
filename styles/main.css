@@ -13,14 +13,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-code {
-  @apply font-mono;
-
-  * {
-    @apply font-mono;
-  }
-}
-
 :root {
   --sh-class: #2d5e9d;
   --sh-identifier: #354150;

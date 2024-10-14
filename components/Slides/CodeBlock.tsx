@@ -51,7 +51,10 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
         className="mt-4 min-h-[400px] max-w-[670px] overflow-auto rounded-2xl bg-gray-200 py-5 text-sm text-white"
       >
         <pre className="-ml-8">
-          <code dangerouslySetInnerHTML={{ __html: codeHTML }} />
+          <code
+            dangerouslySetInnerHTML={{ __html: codeHTML }}
+            className="font-mono"
+          />
         </pre>
       </motion.div>
     </div>
