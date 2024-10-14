@@ -3,8 +3,6 @@
 @tailwind utilities;
 
 * {
-  @apply font-sans;
-
   box-sizing: border-box;
   transition:
     background-color 150ms ease-out,
