@@ -8,6 +8,7 @@ import About from "components/Slides/About"
 import CodeBlock from "components/Slides/CodeBlock"
 import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
+import Points from "components/Slides/Points"
 import QuoteBlock from "components/Slides/QuoteBlock"
 import generateMetadata from "utils/seo"
 
@@ -28,6 +29,12 @@ const slides: React.ReactNode[] = [
     key="quote"
     quote="The most disastrous thing that you can ever learn is your first programming language"
     author="Alan Kay"
+    className="w-[680px]"
+  />,
+  <Points
+    key="points"
+    title="2 hard problems in computer science"
+    points={["Cache invalidation", "Naming things", "off-by-1 errors"]}
     className="w-[680px]"
   />,
   <CodeBlock
