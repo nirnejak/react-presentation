@@ -9,6 +9,7 @@ import CodeBlock from "components/Slides/CodeBlock"
 import Cover from "components/Slides/Cover"
 import End from "components/Slides/End"
 import Points from "components/Slides/Points"
+import Profile from "components/Slides/Profile"
 import QuoteBlock from "components/Slides/QuoteBlock"
 import generateMetadata from "utils/seo"
 
@@ -29,6 +30,26 @@ const slides: React.ReactNode[] = [
     key="quote"
     quote="The most disastrous thing that you can ever learn is your first programming language"
     author="Alan Kay"
+    className="w-[680px]"
+  />,
+  <Profile
+    key="profile"
+    profiles={[
+      {
+        name: "Chris Lattner",
+        title: "Founder @ Modular AI",
+        url: "x.com/clattner_llvm",
+        avatar:
+          "https://pbs.twimg.com/profile_images/1484209565788897285/1n6Viahb_400x400.jpg",
+      },
+      {
+        name: "John Carmack",
+        title: "Founder @ Id Tech",
+        url: "x.com/id_aa_carmack",
+        avatar:
+          "https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_400x400.jpg",
+      },
+    ]}
     className="w-[680px]"
   />,
   <Points
