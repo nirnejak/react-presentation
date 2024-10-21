@@ -9,6 +9,7 @@
 - `<Cover />` - A cover slide component with the title and subtitle
 - `<CodeBlock />` - A component to show some code
 - `<Points />` - A slide component for bullet
+- `<Profiles />` - A slide component for profiles of people
 - `<About />` - A slide component to tell about yourself
 - `<End />` - An outro slide component with social details
 
