@@ -40,22 +40,24 @@ const Points: React.FC<Props> = ({ title, points = [], className }) => {
       >
         {title}
       </motion.h1>
-      {points.map((point, index) => (
-        <motion.p
-          key={index}
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{
-            delay: 0.1 * (index + 1),
-            duration: 0.4,
-            type: "spring",
-          }}
-          className="mt-4 text-3xl leading-normal text-gray-500"
-        >
-          - {point}
-        </motion.p>
-      ))}
+      <ul className="ml-8 list-disc">
+        {points.map((point, index) => (
+          <motion.li
+            key={index}
+            initial="hidden"
+            animate={controls}
+            variants={variants}
+            transition={{
+              delay: 0.1 * (index + 1),
+              duration: 0.4,
+              type: "spring",
+            }}
+            className="mt-4 text-3xl leading-normal text-gray-500"
+          >
+            {point}
+          </motion.li>
+        ))}
+      </ul>
     </div>
   )
 }
