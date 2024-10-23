@@ -1,11 +1,10 @@
 "use client"
 import * as React from "react"
-import { useInView } from "react-intersection-observer"
 
-import { motion, useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
 import { highlight } from "sugar-high"
 
-import { fadeUpVariants } from "utils/animation"
+import useFadeUp from "hooks/useFadeUp"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -15,16 +14,7 @@ interface Props {
 }
 
 const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible").catch((err) => {
-        console.log(err)
-      })
-    }
-  }, [controls, inView])
+  const { ref, controls, variants } = useFadeUp()
 
   const codeHTML = highlight(code)
 
@@ -33,7 +23,7 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
       <motion.h1
         initial="hidden"
         animate={controls}
-        variants={fadeUpVariants}
+        variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
         className="text-5xl font-bold leading-normal text-gray-900"
       >
@@ -42,7 +32,7 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
       <motion.div
         initial="hidden"
         animate={controls}
-        variants={fadeUpVariants}
+        variants={variants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
         className="mt-4 min-h-[400px] max-w-[670px] overflow-auto rounded-2xl bg-gray-200 py-5 text-sm text-white"
       >

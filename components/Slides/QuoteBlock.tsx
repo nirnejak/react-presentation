@@ -1,10 +1,9 @@
 "use client"
 import * as React from "react"
-import { useInView } from "react-intersection-observer"
 
-import { motion, useAnimation } from "framer-motion"
+import { motion } from "framer-motion"
 
-import { fadeUpVariants } from "utils/animation"
+import useFadeUp from "hooks/useFadeUp"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -14,16 +13,7 @@ interface Props {
 }
 
 const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
-  const controls = useAnimation()
-  const [ref, inView] = useInView()
-
-  React.useEffect(() => {
-    if (inView) {
-      controls.start("visible").catch((err) => {
-        console.log(err)
-      })
-    }
-  }, [controls, inView])
+  const { ref, controls, variants } = useFadeUp()
 
   return (
     <div ref={ref} className={classNames("", className)}>
@@ -33,7 +23,7 @@ const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
           <motion.h1
             initial="hidden"
             animate={controls}
-            variants={fadeUpVariants}
+            variants={variants}
             transition={{ delay: 0, duration: 0.4, type: "spring" }}
             className="text-5xl font-bold leading-normal text-gray-900"
           >
@@ -43,7 +33,7 @@ const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
             <motion.p
               initial="hidden"
               animate={controls}
-              variants={fadeUpVariants}
+              variants={variants}
               transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
               className="mt-10 text-3xl leading-normal text-gray-500"
             >
