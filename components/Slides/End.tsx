@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 
 import { motion, useAnimation } from "framer-motion"
 
+import { fadeUpVariants } from "utils/animation"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -23,17 +24,12 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
     }
   }, [controls, inView])
 
-  const variants = {
-    hidden: { translateY: 10, opacity: 0 },
-    visible: { translateY: 0, opacity: 1 },
-  }
-
   return (
     <div ref={ref} className={classNames("w-[680px]", className)}>
       <motion.h1
         initial="hidden"
         animate={controls}
-        variants={variants}
+        variants={fadeUpVariants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
         className="text-5xl font-bold text-gray-900"
       >
@@ -43,7 +39,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
         <motion.p
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
         >
           <span className="text-gray-900">{username}</span>.com
@@ -51,7 +47,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
         <motion.p
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{ delay: 0.15, duration: 0.4, type: "spring" }}
         >
           twitter.com/<span className="text-gray-900">{username}</span>
@@ -59,7 +55,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
         <motion.p
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{ delay: 0.2, duration: 0.4, type: "spring" }}
         >
           github.com/<span className="text-gray-900">{username}</span>
@@ -67,7 +63,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
         <motion.p
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{ delay: 0.25, duration: 0.4, type: "spring" }}
         >
           dribbble.com/<span className="text-gray-900">{username}</span>

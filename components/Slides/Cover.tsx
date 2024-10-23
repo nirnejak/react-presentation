@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 
 import { motion, useAnimation } from "framer-motion"
 
+import { fadeUpVariants } from "utils/animation"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -24,17 +25,12 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
     }
   }, [controls, inView])
 
-  const variants = {
-    hidden: { translateY: 10, opacity: 0 },
-    visible: { translateY: 0, opacity: 1 },
-  }
-
   return (
     <div ref={ref} className={classNames("text-center", className)}>
       <motion.h1
         initial="hidden"
         animate={controls}
-        variants={variants}
+        variants={fadeUpVariants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
         className="text-6xl font-bold leading-normal text-gray-900"
       >
@@ -44,7 +40,7 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
         <motion.p
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
           className="mt-4 text-3xl leading-normal text-gray-500"
         >

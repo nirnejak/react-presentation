@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 
 import { motion, useAnimation } from "framer-motion"
 
+import { fadeUpVariants } from "utils/animation"
 import classNames from "utils/classNames"
 
 interface Profile {
@@ -30,11 +31,6 @@ const About: React.FC<Props> = ({ profiles = [], className }) => {
     }
   }, [controls, inView])
 
-  const variants = {
-    hidden: { translateY: 10, opacity: 0 },
-    visible: { translateY: 0, opacity: 1 },
-  }
-
   return (
     <div ref={ref} className={classNames("grid grid-cols-2 gap-5", className)}>
       {profiles.map((profile, index) => (
@@ -42,7 +38,7 @@ const About: React.FC<Props> = ({ profiles = [], className }) => {
           key={index}
           initial="hidden"
           animate={controls}
-          variants={variants}
+          variants={fadeUpVariants}
           transition={{
             delay: 0.1 * (index + 1),
             duration: 0.4,

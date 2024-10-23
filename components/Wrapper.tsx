@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer"
 
 import { motion, useAnimation } from "framer-motion"
 
+import { fadeUpVariants } from "utils/animation"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -23,17 +24,12 @@ const Wrapper: React.FC<Props> = ({ children, className }) => {
     }
   }, [controls, inView])
 
-  const variants = {
-    hidden: { translateY: 10, opacity: 0 },
-    visible: { translateY: 0, opacity: 1 },
-  }
-
   return (
     <motion.div
       ref={ref}
       initial="hidden"
       animate={controls}
-      variants={variants}
+      variants={fadeUpVariants}
       transition={{ delay: 0, duration: 0.4, type: "spring" }}
       className={classNames("w-[680px]", className)}
     >

@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer"
 import { motion, useAnimation } from "framer-motion"
 import { highlight } from "sugar-high"
 
+import { fadeUpVariants } from "utils/animation"
 import classNames from "utils/classNames"
 
 interface Props {
@@ -25,11 +26,6 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
     }
   }, [controls, inView])
 
-  const variants = {
-    hidden: { translateY: 10, opacity: 0 },
-    visible: { translateY: 0, opacity: 1 },
-  }
-
   const codeHTML = highlight(code)
 
   return (
@@ -37,7 +33,7 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
       <motion.h1
         initial="hidden"
         animate={controls}
-        variants={variants}
+        variants={fadeUpVariants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
         className="text-5xl font-bold leading-normal text-gray-900"
       >
@@ -46,7 +42,7 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
       <motion.div
         initial="hidden"
         animate={controls}
-        variants={variants}
+        variants={fadeUpVariants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
         className="mt-4 min-h-[400px] max-w-[670px] overflow-auto rounded-2xl bg-gray-200 py-5 text-sm text-white"
       >
