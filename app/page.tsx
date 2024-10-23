@@ -24,13 +24,13 @@ const slides: React.ReactNode[] = [
     key="cover"
     title="Welcome"
     subtitle="Let's get started!"
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <QuoteBlock
     key="quote"
     quote="The most disastrous thing that you can ever learn is your first programming language"
     author="Alan Kay"
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <Profile
     key="profile"
@@ -50,13 +50,13 @@ const slides: React.ReactNode[] = [
           "https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_400x400.jpg",
       },
     ]}
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <Points
     key="points"
     title="2 hard problems in computer science"
     points={["Cache invalidation", "Naming things", "off-by-1 errors"]}
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <CodeBlock
     key="code"
@@ -94,14 +94,14 @@ const slides: React.ReactNode[] = [
 
         export default Counter;
         `}
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <Counter key="counter" />, // INFO: Demo component
   <About
     key="about"
     title="Jitendra Nirnejak"
     subtitle="Designer and Developer"
-    className="w-[680px]"
+    className="w-[720px]"
   />,
   <End key="end" username="nirnejak" />,
 ]
