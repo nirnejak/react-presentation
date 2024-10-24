@@ -11,7 +11,7 @@
 - `<Points />` - A slide component for bullet points
 - `<Profiles />` - A slide component for showing profiles of people
 - `<SingleImage />` - A slide component for showing single large image
-- `<MultiImage />` - A slide component for showing images
+- `<MultiImage />` - A slide component for showing multiple images
 - `<About />` - A slide component to tell about yourself
 - `<End />` - An outro slide component with social details
 
