@@ -11,7 +11,7 @@ interface Props {
   className?: string
 }
 
-const Images: React.FC<Props> = ({ images = [], className }) => {
+const MultiImage: React.FC<Props> = ({ images = [], className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
@@ -38,4 +38,4 @@ const Images: React.FC<Props> = ({ images = [], className }) => {
   )
 }
 
-export default Images
+export default MultiImage
