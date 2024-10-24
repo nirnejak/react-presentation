@@ -11,7 +11,7 @@ interface Props {
   className?: string
 }
 
-const SingleImage: React.FC<Props> = ({ image = [], className }) => {
+const SingleImage: React.FC<Props> = ({ image, className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
