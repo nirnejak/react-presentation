@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import useFadeUp from "hooks/useFadeUp"
 import classNames from "utils/classNames"
 
-interface Profile {
+interface IProfile {
   name: string
   title: string
   url: string
@@ -14,11 +14,11 @@ interface Profile {
 }
 
 interface Props {
-  profiles?: Profile[]
+  profiles?: IProfile[]
   className?: string
 }
 
-const About: React.FC<Props> = ({ profiles = [], className }) => {
+const Profile: React.FC<Props> = ({ profiles = [], className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
@@ -59,4 +59,4 @@ const About: React.FC<Props> = ({ profiles = [], className }) => {
   )
 }
 
-export default About
+export default Profile
