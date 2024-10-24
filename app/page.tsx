@@ -12,6 +12,7 @@ import MultiImage from "components/Slides/MultiImage"
 import Points from "components/Slides/Points"
 import Profile from "components/Slides/Profile"
 import QuoteBlock from "components/Slides/QuoteBlock"
+import SingleImage from "components/Slides/SingleImage"
 import generateMetadata from "utils/seo"
 
 export const metadata: Metadata = generateMetadata({
@@ -52,6 +53,11 @@ const slides: React.ReactNode[] = [
       },
     ]}
     className="w-[720px]"
+  />,
+  <SingleImage
+    key="single-image"
+    image="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    className="w-[1020px]"
   />,
   <Points
     key="points"
