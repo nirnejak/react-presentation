@@ -4,8 +4,8 @@ type Event = MouseEvent | TouchEvent
 
 const useClickOutside = (
   handler: (event: Event) => void
-): React.RefObject<HTMLElement> => {
-  const ref = React.useRef<HTMLElement>(null)
+): React.RefObject<HTMLDivElement> => {
+  const ref = React.useRef<HTMLDivElement>(null)
 
   React.useEffect(() => {
     const listener = (event: Event): void => {
