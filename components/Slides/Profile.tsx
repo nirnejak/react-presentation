@@ -22,7 +22,10 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
-    <div ref={ref} className={classNames("grid grid-cols-2 gap-5", className)}>
+    <div
+      ref={ref}
+      className={classNames("grid grid-cols-2 gap-5 md:gap-12", className)}
+    >
       {profiles.map((profile, index) => (
         <motion.div
           key={index}
@@ -37,19 +40,19 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
           className="flex flex-col items-center"
         >
           <div
-            className="mb-8 size-40 rounded-full bg-cover bg-no-repeat"
+            className="mb-8 size-32 rounded-full bg-cover bg-no-repeat md:size-48"
             style={{ backgroundImage: `url("${profile.avatar}")` }}
           />
-          <p className="mb-2 text-2xl font-bold leading-normal text-gray-900">
+          <p className="mb-1.5 text-xl font-bold leading-normal text-gray-900 md:text-2xl">
             {profile.name}
           </p>
-          <p className="mb-2 font-semibold leading-normal text-gray-500">
+          <p className="mb-4 text-sm font-semibold leading-normal text-gray-500 md:text-base">
             {profile.title}
           </p>
           <a
             href={`https://${profile.url}`}
             target="_blank"
-            className="font-semibold leading-normal text-amber-500"
+            className="text-sm font-semibold leading-normal text-amber-500 md:text-base"
           >
             {profile.url}
           </a>
