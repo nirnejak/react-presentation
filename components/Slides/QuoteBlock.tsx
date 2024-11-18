@@ -17,15 +17,17 @@ const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
 
   return (
     <div ref={ref} className={classNames("", className)}>
-      <div className="flex gap-5">
-        <div className="text-9xl font-bold text-gray-900">{"“ "}</div>
+      <div className="flex gap-1 md:gap-5">
+        <div className="text-7xl font-bold text-gray-900 md:text-9xl">
+          {"“ "}
+        </div>
         <div>
           <motion.h1
             initial="hidden"
             animate={controls}
             variants={variants}
             transition={{ delay: 0, duration: 0.4, type: "spring" }}
-            className="text-5xl font-bold leading-normal text-gray-900"
+            className="text-4xl font-bold leading-snug text-gray-900 md:text-5xl md:leading-snug"
           >
             {quote}
           </motion.h1>
@@ -35,7 +37,7 @@ const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
               animate={controls}
               variants={variants}
               transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-              className="mt-10 text-3xl leading-normal text-gray-500"
+              className="mt-10 text-xl text-gray-500 md:text-3xl"
             >
               - {author}
             </motion.p>

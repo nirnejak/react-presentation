@@ -22,11 +22,11 @@ const Points: React.FC<Props> = ({ title, points = [], className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="text-5xl font-bold leading-normal text-gray-900"
+        className="text-4xl font-bold leading-normal text-gray-900 md:text-5xl md:leading-normal"
       >
         {title}
       </motion.h1>
-      <ul className="ml-8 list-disc">
+      <ul className="ml-8 mt-3 list-disc space-y-2 md:mt-10 md:space-y-4">
         {points.map((point, index) => (
           <motion.li
             key={index}
@@ -38,7 +38,7 @@ const Points: React.FC<Props> = ({ title, points = [], className }) => {
               duration: 0.4,
               type: "spring",
             }}
-            className="mt-4 text-3xl leading-normal text-gray-500"
+            className="text-xl text-gray-500 md:text-3xl"
           >
             {point}
           </motion.li>

@@ -17,7 +17,10 @@ const MultiImage: React.FC<Props> = ({ images = [], className }) => {
   return (
     <div
       ref={ref}
-      className={classNames("grid grid-cols-2 items-center gap-20", className)}
+      className={classNames(
+        "grid grid-cols-2 items-center gap-5 md:gap-20",
+        className
+      )}
     >
       {images.map((image, index) => (
         <motion.img

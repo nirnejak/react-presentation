@@ -15,17 +15,17 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
-    <div ref={ref} className={classNames("w-[680px]", className)}>
+    <div ref={ref} className={classNames("", className)}>
       <motion.h1
         initial="hidden"
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="text-5xl font-bold text-gray-900"
+        className="text-4xl font-bold text-gray-900 md:text-5xl"
       >
         Thank You
       </motion.h1>
-      <div className="mt-10 flex flex-col gap-3 text-3xl text-gray-400">
+      <div className="mt-5 flex flex-col gap-1 text-xl text-gray-400 md:mt-10 md:gap-3 md:text-3xl">
         <motion.p
           initial="hidden"
           animate={controls}
