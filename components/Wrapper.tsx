@@ -21,7 +21,7 @@ const Wrapper: React.FC<Props> = ({ children, className }) => {
       animate={controls}
       variants={variants}
       transition={{ delay: 0, duration: 0.4, type: "spring" }}
-      className={classNames("w-[680px]", className)}
+      className={classNames("max-w-[680px]", className)}
     >
       {children}
     </motion.div>
