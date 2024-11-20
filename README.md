@@ -7,6 +7,7 @@
 ## Included Slide Components
 
 - `<Cover />` - A cover slide component with the title and subtitle
+- `<QuoteBlock />` - A component to show quote with author name
 - `<CodeBlock />` - A component to show some code
 - `<Points />` - A slide component for bullet points
 - `<Profiles />` - A slide component for showing profiles of people
