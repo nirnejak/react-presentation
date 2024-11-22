@@ -9,12 +9,12 @@
     "description": "Next.js TypeScript Starter with basic configuration",
     "icons": [
         {
-            "src": "/path-to-icons/icon-256x256.png",
+            "src": "/paths/icon-256x256.png",
             "sizes": "256x256",
             "type": "image/png"
         },
         {
-            "src": "/path-to-icons/icon-512x512.png",
+            "src": "/paths/icon-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }
