@@ -9,8 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "type-check": "tsc --pretty --noEmit",
-    "prepare": "husky install"
+    "type-check": "tsc --pretty --noEmit"
   },
   "dependencies": {
     "akar-icons": "^1.9.31",

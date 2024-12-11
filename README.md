@@ -35,12 +35,6 @@
 npm install
 ```
 
-**Install Git Hooks(Required for Development)**
-
-```bash
-npm run prepare
-```
-
 **Start Development Server**
 
 ```bash
