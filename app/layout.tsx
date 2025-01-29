@@ -21,10 +21,12 @@ const sansFont = localFont({
   src: [
     {
       path: "../fonts/Satoshi-Variable.woff2",
+      weight: "300 800",
       style: "normal",
     },
     {
       path: "../fonts/Satoshi-VariableItalic.woff2",
+      weight: "300 800",
       style: "italic",
     },
   ],
