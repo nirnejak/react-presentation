@@ -1,7 +1,6 @@
 import * as React from "react"
-import { useInView } from "react-intersection-observer"
 
-import { type AnimationControls, useAnimation } from "framer-motion"
+import { type AnimationControls, useAnimation, useInView } from "framer-motion"
 
 const variants = {
   hidden: { translateY: 10, opacity: 0 },
@@ -9,14 +8,15 @@ const variants = {
 }
 
 interface HookType {
-  ref: (node?: Element | null | undefined) => void
+  ref: React.RefObject<HTMLDivElement | null>
   controls: AnimationControls
   variants: typeof variants
 }
 
 const useFadeUp = (): HookType => {
+  const ref = React.useRef<HTMLDivElement | null>(null)
   const controls = useAnimation()
-  const [ref, inView] = useInView()
+  const inView = useInView(ref)
 
   React.useEffect(() => {
     if (inView) {
