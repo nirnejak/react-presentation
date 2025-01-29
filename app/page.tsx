@@ -75,6 +75,7 @@ const slides: React.ReactNode[] = [
   />,
   <CodeBlock
     key="code"
+    language="tsx"
     title="Counter.tsx"
     code={`
         import * as React from "react"

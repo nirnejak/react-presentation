@@ -2,7 +2,7 @@
 import * as React from "react"
 
 import { motion } from "motion/react"
-import { highlight } from "sugar-high"
+import { type BundledLanguage, codeToHtml } from "shiki"
 
 import useFadeUp from "hooks/useFadeUp"
 import classNames from "utils/classNames"
@@ -10,13 +10,35 @@ import classNames from "utils/classNames"
 interface Props {
   title: string
   code: string
+  language?: BundledLanguage
   className?: string
 }
 
-const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
+const CodeBlock: React.FC<Props> = ({
+  title,
+  code,
+  language = "typescript",
+  className,
+}) => {
   const { ref, controls, variants } = useFadeUp()
 
-  const codeHTML = highlight(code)
+  const [codeHTML, setCodeHTML] = React.useState("")
+
+  React.useEffect(() => {
+    const generateCodeHTML = async (): Promise<void> => {
+      if (code.length > 0) {
+        const codeMarkup = await codeToHtml(code, {
+          lang: language,
+          theme: "plastic",
+        })
+        setCodeHTML(codeMarkup)
+      } else {
+        setCodeHTML("")
+      }
+    }
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    generateCodeHTML()
+  }, [code, language])
 
   return (
     <div ref={ref} className={classNames("", className)}>
@@ -34,9 +56,9 @@ const CodeBlock: React.FC<Props> = ({ title, code, className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-gray-200 py-5 text-sm md:min-h-[400px] md:w-full"
+        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] py-2 text-sm md:min-h-[400px] md:w-full"
       >
-        <pre className="-ml-8">
+        <pre className="-ml-11">
           <code
             dangerouslySetInnerHTML={{ __html: codeHTML }}
             className="font-mono"
