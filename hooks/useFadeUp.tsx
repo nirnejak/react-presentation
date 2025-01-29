@@ -1,6 +1,6 @@
 import * as React from "react"
 
-import { type AnimationControls, useAnimation, useInView } from "framer-motion"
+import { type AnimationControls, useAnimation, useInView } from "motion/react"
 
 const variants = {
   hidden: { translateY: 10, opacity: 0 },

@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react"
 
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { highlight } from "sugar-high"
 
 import useFadeUp from "hooks/useFadeUp"
