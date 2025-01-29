@@ -22,7 +22,7 @@ const Points: React.FC<Props> = ({ title, points = [], className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="text-4xl font-bold leading-normal text-gray-900 md:text-5xl md:leading-normal"
+        className="text-4xl font-bold leading-normal tracking-tight text-gray-900 md:text-5xl md:leading-normal"
       >
         {title}
       </motion.h1>

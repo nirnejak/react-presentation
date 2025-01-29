@@ -27,7 +27,7 @@ const QuoteBlock: React.FC<Props> = ({ quote, author, className }) => {
             animate={controls}
             variants={variants}
             transition={{ delay: 0, duration: 0.4, type: "spring" }}
-            className="text-4xl font-bold leading-snug text-gray-900 md:text-5xl md:leading-snug"
+            className="text-4xl font-bold leading-snug tracking-tight text-gray-900 md:text-5xl md:leading-snug"
           >
             {quote}
           </motion.h1>

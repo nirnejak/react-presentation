@@ -21,7 +21,7 @@ const End: React.FC<Props> = ({ username = "nirnejak", className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="text-4xl font-bold text-gray-900 md:text-5xl"
+        className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl"
       >
         Thank You
       </motion.h1>
