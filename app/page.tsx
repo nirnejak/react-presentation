@@ -1,19 +1,19 @@
 import * as React from "react"
 
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 
-import Counter from "components/demo/Counter"
-import Presentation from "components/Presentation"
-import About from "components/Slides/About"
-import CodeBlock from "components/Slides/CodeBlock"
-import Cover from "components/Slides/Cover"
-import End from "components/Slides/End"
-import MultiImage from "components/Slides/MultiImage"
-import Points from "components/Slides/Points"
-import Profile from "components/Slides/Profile"
-import QuoteBlock from "components/Slides/QuoteBlock"
-import SingleImage from "components/Slides/SingleImage"
-import generateMetadata from "utils/seo"
+import Counter from "@/components/demo/Counter"
+import Presentation from "@/components/Presentation"
+import About from "@/components/Slides/About"
+import CodeBlock from "@/components/Slides/CodeBlock"
+import Cover from "@/components/Slides/Cover"
+import End from "@/components/Slides/End"
+import MultiImage from "@/components/Slides/MultiImage"
+import Points from "@/components/Slides/Points"
+import Profile from "@/components/Slides/Profile"
+import QuoteBlock from "@/components/Slides/QuoteBlock"
+import SingleImage from "@/components/Slides/SingleImage"
+import generateMetadata from "@/utils/seo"
 
 export const metadata: Metadata = generateMetadata({
   path: "/",

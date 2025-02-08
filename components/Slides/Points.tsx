@@ -3,8 +3,8 @@ import * as React from "react"
 
 import { motion } from "motion/react"
 
-import useFadeUp from "hooks/useFadeUp"
-import classNames from "utils/classNames"
+import useFadeUp from "@/hooks/useFadeUp"
+import classNames from "@/utils/classNames"
 
 interface Props {
   title: string

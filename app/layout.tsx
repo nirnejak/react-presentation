@@ -4,7 +4,7 @@ import type { Viewport } from "next"
 
 import localFont from "next/font/local"
 
-import classNames from "utils/classNames"
+import classNames from "@/utils/classNames"
 
 import "../styles/main.css"
 

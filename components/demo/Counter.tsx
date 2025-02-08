@@ -1,7 +1,7 @@
 "use client"
 import * as React from "react"
 
-import Wrapper from "components/Wrapper"
+import Wrapper from "@/components/Wrapper"
 
 const Counter: React.FC = () => {
   const [count, setCount] = React.useState(0)
