@@ -1,7 +1,7 @@
 import * as React from "react"
 
 import type { Viewport } from "next"
-
+import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
 import classNames from "@/utils/classNames"
@@ -32,14 +32,10 @@ const sansFont = localFont({
   ],
 })
 
-const monoFont = localFont({
+const monoFont = JetBrains_Mono({
   variable: "--mono-font",
-  src: [
-    {
-      path: "../fonts/JetBrainsMono-Regular.ttf",
-      style: "normal",
-    },
-  ],
+  weight: ["400"],
+  subsets: ["latin"],
 })
 
 const RootLayout: React.FC<Props> = ({ children }) => {
