@@ -10,7 +10,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "type-check": "tsc --pretty --noEmit"
+    "type-check": "tsc --pretty --noEmit",
+    "prepare": "husky"
   },
   "dependencies": {
     "akar-icons": "^1.9.31",

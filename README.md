@@ -35,6 +35,12 @@
 npm install
 ```
 
+**Setup Pre-commit**
+
+```bash
+npm run prepare
+```
+
 **Start Development Server**
 
 ```bash
