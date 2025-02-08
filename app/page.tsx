@@ -13,9 +13,9 @@ import Points from "@/components/Slides/Points"
 import Profile from "@/components/Slides/Profile"
 import QuoteBlock from "@/components/Slides/QuoteBlock"
 import SingleImage from "@/components/Slides/SingleImage"
-import generateMetadata from "@/utils/seo"
+import getMetadata from "@/utils/seo"
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = getMetadata({
   path: "/",
   title: "React Presentation",
   description: "Use your React components as presentation slides",
