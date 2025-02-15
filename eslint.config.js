@@ -1,12 +1,12 @@
 import { dirname } from "path"
 import { fileURLToPath } from "url"
-import { FlatCompat } from "@eslint/eslintrc"
 
 import globals from "globals"
 import eslint from "@eslint/js"
+import { FlatCompat } from "@eslint/eslintrc"
 import tseslint from "typescript-eslint"
-import love from "eslint-config-love"
 
+import love from "eslint-config-love"
 import nodePlugin from "eslint-plugin-n"
 import pluginPromise from "eslint-plugin-promise"
 
