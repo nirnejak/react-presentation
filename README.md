@@ -23,7 +23,7 @@
 ## Additional Packages Used
 
 - **Tailwind CSS** - for styling
-- **Framer Motion** - for animations
+- **Motion(prev Framer Motion)** - for animations
 - **Akar Icons** - for icons
 - **use-sound** - for using sound effects
 
