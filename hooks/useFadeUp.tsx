@@ -1,6 +1,10 @@
 import * as React from "react"
 
-import { type AnimationControls, useAnimation, useInView } from "motion/react"
+import {
+  type LegacyAnimationControls,
+  useAnimation,
+  useInView,
+} from "motion/react"
 
 const variants = {
   hidden: { translateY: 10, opacity: 0 },
@@ -9,7 +13,7 @@ const variants = {
 
 interface HookType {
   ref: React.RefObject<HTMLDivElement | null>
-  controls: AnimationControls
+  controls: LegacyAnimationControls
   variants: typeof variants
 }
 
@@ -20,7 +24,8 @@ const useFadeUp = (): HookType => {
 
   React.useEffect(() => {
     if (inView) {
-      controls.start("visible").catch((err) => {
+      controls.start("visible").catch((err: unknown) => {
+        // eslint-disable-next-line no-console
         console.log(err)
       })
     }
