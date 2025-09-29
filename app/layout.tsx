@@ -40,7 +40,14 @@ const monoFont = JetBrains_Mono({
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={classNames(
+        sansFont.variable,
+        monoFont.variable,
+        "overflow-x-hidden font-sans"
+      )}
+    >
       <head>
         <script
           defer
@@ -49,15 +56,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         />
       </head>
 
-      <body
-        className={classNames(
-          sansFont.variable,
-          monoFont.variable,
-          "overflow-x-hidden font-sans"
-        )}
-      >
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
