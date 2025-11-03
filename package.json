@@ -26,12 +26,12 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.39.0",
+    "@eslint/js": "^9.39.1",
     "@tailwindcss/postcss": "^4.1.16",
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "eslint-config-love": "^133.0.0",
     "eslint-config-next": "^16.0.1",
     "eslint-config-prettier": "^10.1.8",
@@ -48,7 +48,7 @@
     "prettier-plugin-tailwindcss": "^0.7.1",
     "tailwindcss": "^4.1.16",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.3"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint"
