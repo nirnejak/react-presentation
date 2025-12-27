@@ -17,7 +17,7 @@
     "akar-icons": "^1.9.31",
     "dotenv": "^17.2.3",
     "motion": "^12.23.26",
-    "next": "^16.0.10",
+    "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "sharp": "^0.34.5",
@@ -32,8 +32,8 @@
     "@types/react": "^19.2.7",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
-    "eslint-config-love": "^137.0.0",
-    "eslint-config-next": "^16.0.10",
+    "eslint-config-love": "^140.0.0",
+    "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^17.23.1",
@@ -48,7 +48,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.50.0"
+    "typescript-eslint": "^8.50.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint"
