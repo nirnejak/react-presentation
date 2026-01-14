@@ -16,28 +16,28 @@
   "dependencies": {
     "akar-icons": "^1.9.31",
     "dotenv": "^17.2.3",
-    "motion": "^12.24.0",
+    "motion": "^12.26.2",
     "next": "^16.1.1",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "sharp": "^0.34.5",
-    "shiki": "^3.20.0",
+    "shiki": "^3.21.0",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.39.2",
     "@tailwindcss/postcss": "^4.1.18",
-    "@types/node": "^25.0.3",
-    "@types/react": "^19.2.7",
+    "@types/node": "^25.0.8",
+    "@types/react": "^19.2.8",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
-    "eslint-config-love": "^140.0.0",
+    "eslint-config-love": "^144.0.0",
     "eslint-config-next": "^16.1.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-n": "^17.23.1",
-    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-n": "^17.23.2",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-tailwindcss": "^3.18.2",
     "globals": "^17.0.0",
@@ -48,7 +48,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.52.0"
+    "typescript-eslint": "^8.53.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint"
