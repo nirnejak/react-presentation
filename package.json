@@ -5,7 +5,7 @@
   "author": "Jitendra Nirnejak <jeetnirnejak@gmail.com>",
   "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack -p 4000",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
