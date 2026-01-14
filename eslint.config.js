@@ -1,70 +1,43 @@
-import { dirname } from "path"
-import { fileURLToPath } from "url"
+import { defineConfig, globalIgnores } from "eslint/config"
+import nextVitals from "eslint-config-next/core-web-vitals"
+import nextTs from "eslint-config-next/typescript"
+import prettierConfig from "eslint-config-prettier"
+import prettierPlugin from "eslint-plugin-prettier"
+import promise from "eslint-plugin-promise"
+import betterTailwindcss from "eslint-plugin-better-tailwindcss"
 
-import globals from "globals"
-import eslint from "@eslint/js"
-import { FlatCompat } from "@eslint/eslintrc"
-import tseslint from "typescript-eslint"
-
-import love from "eslint-config-love"
-import nodePlugin from "eslint-plugin-n"
-import pluginPromise from "eslint-plugin-promise"
-
-import jsxA11y from "eslint-plugin-jsx-a11y"
-import tailwind from "eslint-plugin-tailwindcss"
-import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended"
-
-const compat = new FlatCompat({
-  baseDirectory: dirname(fileURLToPath(import.meta.url)),
-})
-
-export default tseslint.config(
-  { files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"] },
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  prettierConfig,
   {
-    languageOptions: {
-      parser: tseslint.parser,
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
+    plugins: { prettier: prettierPlugin },
+    rules: {
+      "prettier/prettier": "error",
+    },
+  },
+  {
+    plugins: { promise },
+    rules: promise.configs.recommended.rules,
+  },
+  {
+    plugins: { "better-tailwindcss": betterTailwindcss },
+    rules: betterTailwindcss.configs["recommended-error"].rules,
+    settings: {
+      "better-tailwindcss": {
+        entryPoint: "styles/main.css",
+        detectComponentClasses: true,
       },
-
-      globals: globals.node,
-      sourceType: "module",
-      ecmaVersion: "latest",
     },
   },
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+])
 
-  eslint.configs.recommended,
-  tseslint.configs.recommended,
-  { ...love, files: ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"] },
-
-  {
-    ...nodePlugin.configs["flat/recommended-script"],
-    rules: {
-      "n/no-missing-import": [
-        "error",
-        {
-          ignoreTypeImport: true,
-          tryExtensions: [".ts", ".tsx", ".js", ".jsx", ".json"],
-        },
-      ],
-    },
-  },
-  {
-    plugins: { "jsx-a11y": jsxA11y },
-    rules: jsxA11y.configs.recommended.rules,
-  },
-  pluginPromise.configs["flat/recommended"],
-
-  ...compat.extends("next/core-web-vitals", "next"),
-
-  {
-    rules: {
-      "@typescript-eslint/no-magic-numbers": "off",
-      "eslint-comments/require-description": "off",
-    },
-  },
-
-  ...tailwind.configs["flat/recommended"],
-  eslintPluginPrettierRecommended
-)
+export default eslintConfig
