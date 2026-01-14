@@ -25,7 +25,6 @@ const useFadeUp = (): HookType => {
   React.useEffect(() => {
     if (inView) {
       controls.start("visible").catch((err: unknown) => {
-        // eslint-disable-next-line no-console
         console.log(err)
       })
     }

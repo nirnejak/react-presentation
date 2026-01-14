@@ -95,7 +95,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
     <section className="relative grid h-screen place-content-center">
       <div>{renderCurrentSlide()}</div>
       {isFooterVisible && (
-        <div className="absolute bottom-4 right-0 flex w-full items-end px-4">
+        <div className="absolute right-0 bottom-4 flex w-full items-end px-4">
           {sourceLink !== undefined && (
             <a
               href={`https://github.com/${sourceLink}/`}
@@ -115,7 +115,12 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
             {isControlVisible && (
               <>
                 <button
-                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                  className="
+                    rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden
+                    hover:bg-gray-400
+                    focus:bg-gray-400
+                    active:scale-95
+                  "
                   onClick={() => {
                     prevSlide()
                   }}
@@ -123,7 +128,12 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
                   <ChevronLeft size={15} />
                 </button>
                 <button
-                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                  className="
+                    rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden
+                    hover:bg-gray-400
+                    focus:bg-gray-400
+                    active:scale-95
+                  "
                   onClick={() => {
                     nextSlide()
                   }}

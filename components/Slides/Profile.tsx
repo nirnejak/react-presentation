@@ -40,19 +40,35 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
           className="flex flex-col items-center"
         >
           <div
-            className="mb-8 size-32 rounded-full bg-cover bg-no-repeat md:size-48"
+            className="
+              mb-8 size-32 rounded-full bg-cover bg-no-repeat
+              md:size-48
+            "
             style={{ backgroundImage: `url("${profile.avatar}")` }}
           />
-          <p className="mb-1.5 text-xl font-bold leading-normal text-gray-900 md:text-2xl">
+          <p
+            className="
+              mb-1.5 text-xl/normal font-bold text-gray-900
+              md:text-2xl
+            "
+          >
             {profile.name}
           </p>
-          <p className="mb-4 text-sm font-semibold leading-normal text-gray-500 md:text-base">
+          <p
+            className="
+              mb-4 text-sm/normal font-semibold text-gray-500
+              md:text-base
+            "
+          >
             {profile.title}
           </p>
           <a
             href={`https://${profile.url}`}
             target="_blank"
-            className="text-sm font-semibold leading-normal text-amber-500 md:text-base"
+            className="
+              text-sm/normal font-semibold text-amber-500
+              md:text-base
+            "
           >
             {profile.url}
           </a>

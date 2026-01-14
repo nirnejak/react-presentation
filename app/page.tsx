@@ -26,13 +26,19 @@ const slides: React.ReactNode[] = [
     key="cover"
     title="Welcome"
     subtitle="Let's get started!"
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <QuoteBlock
     key="quote"
     quote="The most disastrous thing that you can ever learn is your first programming language"
     author="Alan Kay"
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <Profile
     key="profile"
@@ -52,18 +58,27 @@ const slides: React.ReactNode[] = [
           "https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_400x400.jpg",
       },
     ]}
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <SingleImage
     key="single-image"
     image="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    className="w-full px-3 md:max-w-[1020px] md:px-0"
+    className="
+      w-full px-3
+      md:max-w-[1020px] md:px-0
+    "
   />,
   <Points
     key="points"
     title="2 hard problems in computer science"
     points={["Cache invalidation", "Naming things", "off-by-1 errors"]}
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <MultiImage
     key="multi-image"
@@ -71,7 +86,10 @@ const slides: React.ReactNode[] = [
       "https://images.unsplash.com/photo-1607706009771-de8808640bcf?q=80&w=1087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "https://images.unsplash.com/photo-1510751007277-36932aac9ebd?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ]}
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <CodeBlock
     key="code"
@@ -110,16 +128,29 @@ const slides: React.ReactNode[] = [
 
         export default Counter;
         `}
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
   <Counter key="counter" />, // INFO: Demo component
   <About
     key="about"
     title="Jitendra Nirnejak"
     subtitle="Designer and Developer"
-    className="max-w-[720px] px-3 md:px-0"
+    className="
+      max-w-[720px] px-3
+      md:px-0
+    "
   />,
-  <End key="end" username="nirnejak" className="max-w-[680px] px-3 md:px-0" />,
+  <End
+    key="end"
+    username="nirnejak"
+    className="
+      max-w-[680px] px-3
+      md:px-0
+    "
+  />,
 ]
 
 const Home: React.FC = () => {

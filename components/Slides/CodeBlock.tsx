@@ -36,7 +36,7 @@ const CodeBlock: React.FC<Props> = ({
         setCodeHTML("")
       }
     }
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+
     generateCodeHTML()
   }, [code, language])
 
@@ -47,7 +47,10 @@ const CodeBlock: React.FC<Props> = ({
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="text-4xl font-bold leading-normal tracking-tight text-gray-900 md:text-5xl"
+        className="
+          text-4xl/normal font-bold tracking-tight text-gray-900
+          md:text-5xl
+        "
       >
         {title}
       </motion.h1>
@@ -56,7 +59,11 @@ const CodeBlock: React.FC<Props> = ({
         animate={controls}
         variants={variants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] py-2 text-sm md:min-h-[400px] md:w-full"
+        className="
+          mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl
+          bg-[#21252B] py-2 text-sm
+          md:min-h-[400px] md:w-full
+        "
       >
         <pre className="-ml-11">
           <code
