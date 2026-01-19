@@ -25,7 +25,7 @@ const eslintConfig = defineConfig([
     rules: betterTailwindcss.configs["recommended-error"].rules,
     settings: {
       "better-tailwindcss": {
-        entryPoint: "styles/main.css",
+        entryPoint: "app/main.css",
         detectComponentClasses: true,
       },
     },
