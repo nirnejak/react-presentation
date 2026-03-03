@@ -1,8 +1,7 @@
-import * as React from "react"
-
 import type { Viewport } from "next"
 import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
+import type * as React from "react"
 
 import classNames from "@/utils/classNames"
 

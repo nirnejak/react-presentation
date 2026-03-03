@@ -10,12 +10,8 @@ const Counter: React.FC = () => {
     <Wrapper className="flex justify-center">
       <div className="flex items-center gap-4">
         <button
-          className="
-            rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all
-            select-none
-            hover:bg-gray-900
-            active:scale-95
-          "
+          type="button"
+          className="select-none rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all hover:bg-gray-900 active:scale-95"
           onClick={() => {
             if (count > 0) setCount(count - 1)
           }}
@@ -24,12 +20,8 @@ const Counter: React.FC = () => {
         </button>
         <p>Count is {count}</p>
         <button
-          className="
-            rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all
-            select-none
-            hover:bg-gray-900
-            active:scale-95
-          "
+          type="button"
+          className="select-none rounded-md bg-gray-800 px-5 py-3 text-gray-200 transition-all hover:bg-gray-900 active:scale-95"
           onClick={() => {
             setCount(count + 1)
           }}

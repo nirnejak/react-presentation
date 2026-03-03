@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { motion } from "motion/react"
+import type * as React from "react"
 
 import useFadeUp from "@/hooks/useFadeUp"
 import classNames from "@/utils/classNames"
@@ -22,10 +22,7 @@ const About: React.FC<Props> = ({ title, subtitle, className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="
-          text-4xl/normal font-bold tracking-tight text-gray-900
-          md:text-5xl
-        "
+        className="font-bold text-4xl/normal text-gray-900 tracking-tight md:text-5xl"
       >
         {title}
       </motion.h1>
@@ -35,10 +32,7 @@ const About: React.FC<Props> = ({ title, subtitle, className }) => {
           animate={controls}
           variants={variants}
           transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-          className="
-            mt-1 text-xl/normal text-gray-500
-            md:mt-4 md:text-3xl
-          "
+          className="mt-1 text-gray-500 text-xl/normal md:mt-4 md:text-3xl"
         >
           {subtitle}
         </motion.p>

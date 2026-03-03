@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { motion } from "motion/react"
+import type * as React from "react"
 
 import useFadeUp from "@/hooks/useFadeUp"
 import classNames from "@/utils/classNames"
@@ -28,7 +28,7 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
     >
       {profiles.map((profile, index) => (
         <motion.div
-          key={index}
+          key={profile.name}
           initial="hidden"
           animate={controls}
           variants={variants}
@@ -40,35 +40,19 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
           className="flex flex-col items-center"
         >
           <div
-            className="
-              mb-8 size-32 rounded-full bg-cover bg-no-repeat
-              md:size-48
-            "
+            className="mb-8 size-32 rounded-full bg-cover bg-no-repeat md:size-48"
             style={{ backgroundImage: `url("${profile.avatar}")` }}
           />
-          <p
-            className="
-              mb-1.5 text-xl/normal font-bold text-gray-900
-              md:text-2xl
-            "
-          >
+          <p className="mb-1.5 font-bold text-gray-900 text-xl/normal md:text-2xl">
             {profile.name}
           </p>
-          <p
-            className="
-              mb-4 text-sm/normal font-semibold text-gray-500
-              md:text-base
-            "
-          >
+          <p className="mb-4 font-semibold text-gray-500 text-sm/normal md:text-base">
             {profile.title}
           </p>
           <a
             href={`https://${profile.url}`}
             target="_blank"
-            className="
-              text-sm/normal font-semibold text-amber-500
-              md:text-base
-            "
+            className="font-semibold text-amber-500 text-sm/normal md:text-base"
           >
             {profile.url}
           </a>

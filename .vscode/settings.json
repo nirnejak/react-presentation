@@ -1,18 +1,14 @@
 {
+  "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "editor.minimap.renderCharacters": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "explicit"
   },
   "emmet.includeLanguages": {
-    "django-html": "html",
     "javascript": "javascriptreact",
     "typescript": "typescriptreact"
-  },
-  "[svg]": {
-    "editor.formatOnSave": false
   },
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",

@@ -1,11 +1,9 @@
 {
   "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "editorconfig.editorconfig",
-    "esbenp.prettier-vscode",
+    "biomejs.biome",
     "jock.svg",
-    "bradlc.vscode-tailwindcss",
     "csstools.postcss",
+    "bradlc.vscode-tailwindcss",
     "streetsidesoftware.code-spell-checker"
   ]
 }

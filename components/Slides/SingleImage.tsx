@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { motion } from "motion/react"
+import type * as React from "react"
 
 import useFadeUp from "@/hooks/useFadeUp"
 import classNames from "@/utils/classNames"
@@ -16,6 +16,7 @@ const SingleImage: React.FC<Props> = ({ image, className }) => {
 
   return (
     <div ref={ref} className={classNames("", className)}>
+      {/* biome-ignore lint/performance/noImgElement: animated with motion */}
       <motion.img
         initial="hidden"
         animate={controls}

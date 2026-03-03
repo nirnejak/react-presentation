@@ -1,10 +1,9 @@
-import * as React from "react"
-
 import {
   type LegacyAnimationControls,
   useAnimation,
   useInView,
 } from "motion/react"
+import * as React from "react"
 
 const variants = {
   hidden: { translateY: 10, opacity: 0 },

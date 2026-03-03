@@ -24,7 +24,7 @@ const useClickOutside = (
       document.removeEventListener("mousedown", listener)
       document.removeEventListener("touchstart", listener)
     }
-  }, [ref, handler]) // Reload only if ref or handler changes
+  }, [handler]) // Reload only if ref or handler changes
 
   return ref
 }

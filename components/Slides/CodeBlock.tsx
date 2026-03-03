@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { motion } from "motion/react"
+import * as React from "react"
 import { type BundledLanguage, codeToHtml } from "shiki"
 
 import useFadeUp from "@/hooks/useFadeUp"
@@ -47,10 +47,7 @@ const CodeBlock: React.FC<Props> = ({
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="
-          text-4xl/normal font-bold tracking-tight text-gray-900
-          md:text-5xl
-        "
+        className="font-bold text-4xl/normal text-gray-900 tracking-tight md:text-5xl"
       >
         {title}
       </motion.h1>
@@ -59,14 +56,11 @@ const CodeBlock: React.FC<Props> = ({
         animate={controls}
         variants={variants}
         transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-        className="
-          mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl
-          bg-[#21252B] py-2 text-sm
-          md:min-h-[400px] md:w-full
-        "
+        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] py-2 text-sm md:min-h-[400px] md:w-full"
       >
         <pre className="-ml-11">
           <code
+            // biome-ignore lint/security/noDangerouslySetInnerHtml: code highlighting requires innerHTML
             dangerouslySetInnerHTML={{ __html: codeHTML }}
             className="font-mono"
           />

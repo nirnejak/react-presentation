@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { motion } from "motion/react"
+import type * as React from "react"
 
 import useFadeUp from "@/hooks/useFadeUp"
 import classNames from "@/utils/classNames"
@@ -23,8 +23,9 @@ const MultiImage: React.FC<Props> = ({ images = [], className }) => {
       )}
     >
       {images.map((image, index) => (
+        // biome-ignore lint/performance/noImgElement: animated with motion
         <motion.img
-          key={index}
+          key={image}
           initial="hidden"
           animate={controls}
           variants={variants}

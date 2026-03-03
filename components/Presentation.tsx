@@ -1,7 +1,7 @@
 "use client"
-import * as React from "react"
 
 import { ChevronLeft, ChevronRight, GithubFill } from "akar-icons"
+import * as React from "react"
 
 const config = {
   isControlVisible: true,
@@ -84,7 +84,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
   ])
 
   const renderCurrentSlide = (): React.ReactNode => {
-    if (!isNaN(currentSlide) && slides.length > 0) {
+    if (!Number.isNaN(currentSlide) && slides.length > 0) {
       return slides[currentSlide]
     } else {
       return null
@@ -108,19 +108,15 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
           )}
           <div className="ml-auto flex items-center gap-2">
             {isPageNumberVisible && (
-              <p className="mr-4 text-sm text-gray-600">
+              <p className="mr-4 text-gray-600 text-sm">
                 {currentSlide + 1}/{slides.length}
               </p>
             )}
             {isControlVisible && (
               <>
                 <button
-                  className="
-                    rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden
-                    hover:bg-gray-400
-                    focus:bg-gray-400
-                    active:scale-95
-                  "
+                  type="button"
+                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
                   onClick={() => {
                     prevSlide()
                   }}
@@ -128,12 +124,8 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
                   <ChevronLeft size={15} />
                 </button>
                 <button
-                  className="
-                    rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden
-                    hover:bg-gray-400
-                    focus:bg-gray-400
-                    active:scale-95
-                  "
+                  type="button"
+                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
                   onClick={() => {
                     nextSlide()
                   }}
