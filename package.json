@@ -18,18 +18,18 @@
   "dependencies": {
     "akar-icons": "^1.9.31",
     "dotenv": "^17.4.2",
-    "motion": "^12.43.0",
-    "next": "^16.2.12",
+    "motion": "^13.0.0",
+    "next": "^16.3.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "sharp": "^0.35.3",
-    "shiki": "^4.4.1",
+    "shiki": "^4.4.2",
     "use-sound": "^5.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.6",
+    "@biomejs/biome": "2.5.7",
     "@tailwindcss/postcss": "^4.3.3",
-    "@types/node": "^26.1.2",
+    "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "autoprefixer": "^10.5.4",
     "babel-plugin-react-compiler": "^1.0.0",
