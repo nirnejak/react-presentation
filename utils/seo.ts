@@ -34,10 +34,7 @@ const getMetadata = ({
       "Framer Motion",
       "TypeScript",
       "Akar Icons",
-      "ESLint",
-      "Prettier",
       "JavaScript",
-      "Postgres",
     ],
 
     icons: {

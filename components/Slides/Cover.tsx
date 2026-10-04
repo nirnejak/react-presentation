@@ -22,7 +22,7 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="font-bold text-4xl/normal text-gray-900 tracking-tight md:text-6xl"
+        className="text-4xl/normal font-bold tracking-tight text-gray-900 md:text-6xl"
       >
         {title}
       </motion.h1>
@@ -32,7 +32,7 @@ const Cover: React.FC<Props> = ({ title, subtitle, className }) => {
           animate={controls}
           variants={variants}
           transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-          className="mt-1 text-gray-500 text-xl/normal md:mt-4 md:text-3xl"
+          className="mt-1 text-xl/normal text-gray-500 md:mt-4 md:text-3xl"
         >
           {subtitle}
         </motion.p>

@@ -5,7 +5,6 @@ import * as React from "react"
 import { type BundledLanguage, codeToHtml } from "shiki"
 
 import useFadeUp from "@/hooks/useFadeUp"
-import classNames from "@/utils/classNames"
 
 interface Props {
   title: string
@@ -41,13 +40,13 @@ const CodeBlock: React.FC<Props> = ({
   }, [code, language])
 
   return (
-    <div ref={ref} className={classNames("", className)}>
+    <div ref={ref} className={className}>
       <motion.h1
         initial="hidden"
         animate={controls}
         variants={variants}
         transition={{ delay: 0, duration: 0.4, type: "spring" }}
-        className="font-bold text-4xl/normal text-gray-900 tracking-tight md:text-5xl"
+        className="text-4xl/normal font-bold tracking-tight text-gray-900 md:text-5xl"
       >
         {title}
       </motion.h1>
@@ -60,7 +59,6 @@ const CodeBlock: React.FC<Props> = ({
       >
         <pre className="-ml-11">
           <code
-            // biome-ignore lint/security/noDangerouslySetInnerHtml: code highlighting requires innerHTML
             dangerouslySetInnerHTML={{ __html: codeHTML }}
             className="font-mono"
           />

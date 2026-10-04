@@ -18,7 +18,7 @@ interface Props {
   className?: string
 }
 
-const Profile: React.FC<Props> = ({ profiles = [], className }) => {
+const Profile: React.FC<Props> = ({ profiles, className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
@@ -26,7 +26,7 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
       ref={ref}
       className={classNames("grid grid-cols-2 gap-5 md:gap-12", className)}
     >
-      {profiles.map((profile, index) => (
+      {profiles?.map((profile, index) => (
         <motion.div
           key={profile.name}
           initial="hidden"
@@ -43,16 +43,16 @@ const Profile: React.FC<Props> = ({ profiles = [], className }) => {
             className="mb-8 size-32 rounded-full bg-cover bg-no-repeat md:size-48"
             style={{ backgroundImage: `url("${profile.avatar}")` }}
           />
-          <p className="mb-1.5 font-bold text-gray-900 text-xl/normal md:text-2xl">
+          <p className="mb-1.5 text-xl/normal font-bold text-gray-900 md:text-2xl">
             {profile.name}
           </p>
-          <p className="mb-4 font-semibold text-gray-500 text-sm/normal md:text-base">
+          <p className="mb-4 text-sm/normal font-semibold text-gray-500 md:text-base">
             {profile.title}
           </p>
           <a
             href={`https://${profile.url}`}
             target="_blank"
-            className="font-semibold text-amber-500 text-sm/normal md:text-base"
+            className="text-sm/normal font-semibold text-amber-500 md:text-base"
           >
             {profile.url}
           </a>

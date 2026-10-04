@@ -59,15 +59,15 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
           break
         case "F":
         case "f":
-          setIsFooterVisible(!isFooterVisible)
+          setIsFooterVisible((visible) => !visible)
           break
         case "C":
         case "c":
-          setIsControlVisible(!isControlVisible)
+          setIsControlVisible((visible) => !visible)
           break
         case "P":
         case "p":
-          setIsPageNumberVisible(!isPageNumberVisible)
+          setIsPageNumberVisible((visible) => !visible)
           break
       }
     }
@@ -75,25 +75,11 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
     return () => {
       document.removeEventListener("keyup", handleKeyboardEvent)
     }
-  }, [
-    prevSlide,
-    nextSlide,
-    isFooterVisible,
-    isControlVisible,
-    isPageNumberVisible,
-  ])
-
-  const renderCurrentSlide = (): React.ReactNode => {
-    if (!Number.isNaN(currentSlide) && slides.length > 0) {
-      return slides[currentSlide]
-    } else {
-      return null
-    }
-  }
+  }, [prevSlide, nextSlide])
 
   return (
     <section className="relative grid h-screen place-content-center">
-      <div>{renderCurrentSlide()}</div>
+      <div>{slides[currentSlide]}</div>
       {isFooterVisible && (
         <div className="absolute right-0 bottom-4 flex w-full items-end px-4">
           {sourceLink !== undefined && (
@@ -108,7 +94,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
           )}
           <div className="ml-auto flex items-center gap-2">
             {isPageNumberVisible && (
-              <p className="mr-4 text-gray-600 text-sm">
+              <p className="mr-4 text-sm text-gray-600">
                 {currentSlide + 1}/{slides.length}
               </p>
             )}

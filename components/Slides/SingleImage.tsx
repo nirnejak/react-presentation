@@ -4,7 +4,6 @@ import { motion } from "motion/react"
 import type * as React from "react"
 
 import useFadeUp from "@/hooks/useFadeUp"
-import classNames from "@/utils/classNames"
 
 interface Props {
   image?: string
@@ -15,8 +14,7 @@ const SingleImage: React.FC<Props> = ({ image, className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
-    <div ref={ref} className={classNames("", className)}>
-      {/* biome-ignore lint/performance/noImgElement: animated with motion */}
+    <div ref={ref} className={className}>
       <motion.img
         initial="hidden"
         animate={controls}

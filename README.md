@@ -25,7 +25,6 @@
 - **Tailwind CSS** - for styling
 - **Motion(prev Framer Motion)** - for animations
 - **Akar Icons** - for icons
-- **use-sound** - for using sound effects
 
 ## Available Scripts
 
@@ -53,7 +52,7 @@ bun run dev
 bun run lint
 ```
 
-**Format all files with Prettier**
+**Format all files with oxfmt**
 
 ```bash
 bun run format

@@ -11,7 +11,7 @@ interface Props {
   className?: string
 }
 
-const MultiImage: React.FC<Props> = ({ images = [], className }) => {
+const MultiImage: React.FC<Props> = ({ images, className }) => {
   const { ref, controls, variants } = useFadeUp()
 
   return (
@@ -22,8 +22,7 @@ const MultiImage: React.FC<Props> = ({ images = [], className }) => {
         className
       )}
     >
-      {images.map((image, index) => (
-        // biome-ignore lint/performance/noImgElement: animated with motion
+      {images?.map((image, index) => (
         <motion.img
           key={image}
           initial="hidden"

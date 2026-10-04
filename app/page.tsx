@@ -123,12 +123,10 @@ const slides: React.ReactNode[] = [
 
 const Home: React.FC = () => {
   return (
-    <div>
-      <Presentation
-        slides={slides}
-        sourceLink="nirnejak/react-presentation" // format: '<username>/<repository>'
-      />
-    </div>
+    <Presentation
+      slides={slides}
+      sourceLink="nirnejak/react-presentation" // format: '<username>/<repository>'
+    />
   )
 }
 
