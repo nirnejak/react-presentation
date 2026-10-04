@@ -47,14 +47,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         "overflow-x-hidden font-sans"
       )}
     >
-      <head>
-        <script
-          defer
-          data-domain="react-presentation-maker.vercel.app"
-          src="https://plausible.io/js/script.js"
-        />
-      </head>
-
       <body>{children}</body>
     </html>
   )
