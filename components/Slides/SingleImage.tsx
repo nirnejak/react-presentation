@@ -12,7 +12,13 @@ interface Props {
 const SingleImage: React.FC<Props> = ({ image, alt, className }) => {
   return (
     <div className={className}>
-      <motion.img {...fadeUp(0.1)} src={image} alt={alt} />
+      <motion.img
+        {...fadeUp(0.1)}
+        src={image}
+        alt={alt}
+        // Cap the height so tall or wide images stay clear of the footer
+        className="mx-auto max-h-[75vh] w-auto max-w-full"
+      />
     </div>
   )
 }
