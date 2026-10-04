@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "biomejs.biome",
+    "oxc.oxc-vscode",
     "jock.svg",
     "csstools.postcss",
     "bradlc.vscode-tailwindcss",
