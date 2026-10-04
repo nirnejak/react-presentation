@@ -4,8 +4,13 @@ import type * as React from "react"
 import { fadeUp } from "@/utils/animation"
 import classNames from "@/utils/classNames"
 
+interface Image {
+  src: string
+  alt: string
+}
+
 interface Props {
-  images?: string[]
+  images?: Image[]
   className?: string
 }
 
@@ -19,9 +24,10 @@ const MultiImage: React.FC<Props> = ({ images, className }) => {
     >
       {images?.map((image, index) => (
         <motion.img
-          key={image}
+          key={image.src}
           {...fadeUp(0.1 * (index + 1))}
-          src={image}
+          src={image.src}
+          alt={image.alt}
           className={index % 2 === 0 ? "mb-10" : "mt-20"}
         />
       ))}

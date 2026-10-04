@@ -55,6 +55,7 @@ const slides: React.ReactNode[] = [
   />,
   <SingleImage
     key="single-image"
+    alt="Backlit mechanical keyboard"
     image="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     className="w-full px-3 md:max-w-[1020px] md:px-0"
   />,
@@ -67,8 +68,14 @@ const slides: React.ReactNode[] = [
   <MultiImage
     key="multi-image"
     images={[
-      "https://images.unsplash.com/photo-1607706009771-de8808640bcf?q=80&w=1087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1510751007277-36932aac9ebd?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      {
+        src: "https://images.unsplash.com/photo-1607706009771-de8808640bcf?q=80&w=1087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Laptop with code on screen",
+      },
+      {
+        src: "https://images.unsplash.com/photo-1510751007277-36932aac9ebd?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        alt: "Hand typing on a laptop showing code",
+      },
     ]}
     className="max-w-[720px] px-3 md:px-0"
   />,

@@ -10,7 +10,7 @@
 - `<QuoteBlock />` - A component to show quote with author name
 - `<CodeBlock />` - A component to show some code
 - `<Points />` - A slide component for bullet points
-- `<Profiles />` - A slide component for showing profiles of people
+- `<Profile />` - A slide component for showing profiles of people
 - `<SingleImage />` - A slide component for showing single large image
 - `<MultiImage />` - A slide component for showing multiple images
 - `<About />` - A slide component to tell about yourself

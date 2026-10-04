@@ -11,7 +11,7 @@ interface Props {
 const End: React.FC<Props> = ({ username, className }) => {
   const links = [
     { prefix: "", suffix: ".com" },
-    { prefix: "twitter.com/", suffix: "" },
+    { prefix: "x.com/", suffix: "" },
     { prefix: "github.com/", suffix: "" },
     { prefix: "dribbble.com/", suffix: "" },
   ]

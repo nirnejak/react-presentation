@@ -4,14 +4,15 @@ import type * as React from "react"
 import { fadeUp } from "@/utils/animation"
 
 interface Props {
-  image?: string
+  image: string
+  alt: string
   className?: string
 }
 
-const SingleImage: React.FC<Props> = ({ image, className }) => {
+const SingleImage: React.FC<Props> = ({ image, alt, className }) => {
   return (
     <div className={className}>
-      <motion.img {...fadeUp(0.1)} src={image} />
+      <motion.img {...fadeUp(0.1)} src={image} alt={alt} />
     </div>
   )
 }
