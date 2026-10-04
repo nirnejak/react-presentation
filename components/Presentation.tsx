@@ -23,11 +23,21 @@ const config = {
 
 const SWIPE_THRESHOLD = 50
 
-// Slides shift slightly in the direction of travel while crossfading
+// Slides shift slightly in the direction of travel while crossfading. The
+// outgoing slide leaves quickly and overlaps the incoming one, so there's no
+// blank gap between them
 const SLIDE_VARIANTS: Variants = {
-  enter: (direction: number) => ({ x: direction * 40, opacity: 0 }),
-  center: { x: 0, opacity: 1 },
-  exit: (direction: number) => ({ x: direction * -40, opacity: 0 }),
+  enter: (direction: number) => ({ x: direction * 24, opacity: 0 }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
+  },
+  exit: (direction: number) => ({
+    x: direction * -24,
+    opacity: 0,
+    transition: { duration: 0.12, ease: "easeIn" },
+  }),
 }
 
 const toggleFullscreen = (): void => {
@@ -149,7 +159,7 @@ const Deck: React.FC<Props> = ({ slides, sourceLink }) => {
   return (
     <>
       <section
-        className="relative grid h-screen place-content-center print:hidden"
+        className="relative grid h-screen place-content-center place-items-center print:hidden"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -164,7 +174,7 @@ const Deck: React.FC<Props> = ({ slides, sourceLink }) => {
             style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
           />
         )}
-        <AnimatePresence mode="wait" initial={false} custom={direction}>
+        <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={slide.id}
             custom={direction}
@@ -172,7 +182,8 @@ const Deck: React.FC<Props> = ({ slides, sourceLink }) => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.2, ease: "easeOut" }}
+            // Share one grid cell so the slides overlap while crossfading
+            className="col-start-1 row-start-1"
           >
             {slide.content}
           </motion.div>

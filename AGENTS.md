@@ -143,7 +143,7 @@ Always run before completing work:
 
 **Presentation**: `components/Presentation.tsx` renders one slide at a time from the `slides` array and wraps around at both ends. The current slide lives in the URL as `?slide=N` (1-based), read with `useSyncExternalStore`, so refreshing or sharing a link keeps the slide.
 
-Slides crossfade with a small shift in the direction of travel (`AnimatePresence`); a progress bar sits at the top while the footer is visible. `MotionProvider` sets `reducedMotion="user"`, so transforms are skipped when the OS asks for reduced motion.
+Slides crossfade with a small shift in the direction of travel (`AnimatePresence`; outgoing and incoming slides share one grid cell and overlap, so there is no blank gap); a progress bar sits at the top while the footer is visible. `MotionProvider` sets `reducedMotion="user"`, so transforms are skipped when the OS asks for reduced motion.
 
 Controls: `←`/`A`/`PageUp` previous, `→`/`D`/`PageDown` next (presentation clickers send PageUp/PageDown), swipe left/right on touch screens, `F` toggle footer, `Shift+F` toggle fullscreen, `C` toggle controls, `P` toggle page numbers, `S` open the presenter view.
 
