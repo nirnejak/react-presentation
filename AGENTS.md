@@ -44,7 +44,7 @@ components/
 ├── Slides/             # Reusable slide components (Cover, Points, CodeBlock, ...)
 └── demo/               # Demo components rendered as slides
 utils/                  # Animation presets, classNames helper, SEO metadata
-assets/                 # Icons used from CSS (custom cursor)
+assets/                 # Slide images (imported statically) and the custom cursor icon
 fonts/                  # Local Satoshi variable fonts
 public/                 # Static assets
 ```
@@ -99,6 +99,7 @@ export default Title
 - Wrap non-slide components in `<Wrapper>` to get the same fade-up entrance
 - Add new slides to the `slides` array in `app/page.tsx` with a unique `key`
 - Use `classNames` utility only when merging base classes with `className`
+- Images: put files in `assets/images/`, import them statically and render with `next/image` (`placeholder="blur"`); wrap in a `motion.div` to animate
 
 ### Naming Conventions
 

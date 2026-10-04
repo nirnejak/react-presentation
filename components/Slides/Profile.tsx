@@ -1,4 +1,5 @@
 import * as motion from "motion/react-client"
+import Image, { type StaticImageData } from "next/image"
 import type * as React from "react"
 
 import { fadeUp } from "@/utils/animation"
@@ -8,7 +9,7 @@ interface IProfile {
   name: string
   title: string
   url: string
-  avatar: string
+  avatar: StaticImageData
 }
 
 interface Props {
@@ -25,9 +26,12 @@ const Profile: React.FC<Props> = ({ profiles, className }) => {
           {...fadeUp(0.1 * (index + 1))}
           className="flex flex-col items-center"
         >
-          <div
-            className="mb-8 size-32 rounded-full bg-cover bg-no-repeat md:size-48"
-            style={{ backgroundImage: `url("${profile.avatar}")` }}
+          <Image
+            src={profile.avatar}
+            alt=""
+            placeholder="blur"
+            sizes="192px"
+            className="mb-8 size-32 rounded-full object-cover md:size-48"
           />
           <p className="mb-1.5 text-xl/normal font-bold text-gray-900 md:text-2xl">
             {profile.name}

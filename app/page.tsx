@@ -1,6 +1,11 @@
 import type { Metadata } from "next"
 import type * as React from "react"
 
+import chrisLattner from "@/assets/images/chris-lattner.jpg"
+import johnCarmack from "@/assets/images/john-carmack.jpg"
+import keyboard from "@/assets/images/keyboard.jpg"
+import laptopCode from "@/assets/images/laptop-code.jpg"
+import laptopTyping from "@/assets/images/laptop-typing.jpg"
 import Counter from "@/components/demo/Counter"
 import Presentation from "@/components/Presentation"
 import About from "@/components/Slides/About"
@@ -40,15 +45,13 @@ const slides: React.ReactNode[] = [
         name: "Chris Lattner",
         title: "Founder @ Modular AI",
         url: "x.com/clattner_llvm",
-        avatar:
-          "https://pbs.twimg.com/profile_images/1484209565788897285/1n6Viahb_400x400.jpg",
+        avatar: chrisLattner,
       },
       {
         name: "John Carmack",
         title: "Founder @ Id Tech",
         url: "x.com/id_aa_carmack",
-        avatar:
-          "https://pbs.twimg.com/profile_images/1560764938083352577/B1X3m4NN_400x400.jpg",
+        avatar: johnCarmack,
       },
     ]}
     className="max-w-[720px] px-3 md:px-0"
@@ -56,7 +59,7 @@ const slides: React.ReactNode[] = [
   <SingleImage
     key="single-image"
     alt="Backlit mechanical keyboard"
-    image="https://images.unsplash.com/photo-1626958390898-162d3577f293?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    image={keyboard}
     className="w-full px-3 md:max-w-[1020px] md:px-0"
   />,
   <Points
@@ -69,11 +72,11 @@ const slides: React.ReactNode[] = [
     key="multi-image"
     images={[
       {
-        src: "https://images.unsplash.com/photo-1607706009771-de8808640bcf?q=80&w=1087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: laptopCode,
         alt: "Laptop with code on screen",
       },
       {
-        src: "https://images.unsplash.com/photo-1510751007277-36932aac9ebd?q=80&w=1037&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        src: laptopTyping,
         alt: "Hand typing on a laptop showing code",
       },
     ]}
