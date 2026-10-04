@@ -184,7 +184,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
                 <button
                   type="button"
                   aria-label="Previous slide"
-                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                  className="cursor-pointer rounded-full bg-gray-300 p-3 text-gray-800 transition hover:bg-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 active:scale-95"
                   onClick={() => {
                     prevSlide()
                   }}
@@ -194,7 +194,7 @@ const Presentation: React.FC<Props> = ({ slides, sourceLink }) => {
                 <button
                   type="button"
                   aria-label="Next slide"
-                  className="rounded-full bg-gray-300 p-3 text-gray-800 outline-hidden hover:bg-gray-400 focus:bg-gray-400 active:scale-95"
+                  className="cursor-pointer rounded-full bg-gray-300 p-3 text-gray-800 transition hover:bg-gray-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800 active:scale-95"
                   onClick={() => {
                     nextSlide()
                   }}
