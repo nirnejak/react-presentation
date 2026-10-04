@@ -14,7 +14,7 @@
 - `<SingleImage />` - A slide component for showing single large image
 - `<MultiImage />` - A slide component for showing multiple images
 - `<About />` - A slide component to tell about yourself
-- `<End />` - An outro slide component with social details
+- `<End />` - An outro slide component with social links (pass `links` to customise, `{username}` is replaced)
 
 ## Other Included Components
 
