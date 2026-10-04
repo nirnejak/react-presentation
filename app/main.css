@@ -12,3 +12,22 @@ body {
     url("../assets/icons/circle.svg") 15 15,
     auto;
 }
+
+@media print {
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+
+  /* Slides fade up when scrolled into view, which never happens on paper */
+  .print-slide * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Code can't scroll on paper, so wrap long lines instead */
+  .print-slide pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+}

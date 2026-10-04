@@ -33,7 +33,7 @@ const CodeBlock = async ({
       </motion.h1>
       <motion.div
         {...fadeUp(0.1)}
-        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] p-5 text-sm md:min-h-[400px] md:w-full"
+        className="mt-4 max-h-[70vh] w-[min(720px,calc(100vw-24px))] overflow-auto rounded-2xl bg-[#21252B] p-5 text-sm md:min-h-[400px] print:max-h-none print:text-xs"
         dangerouslySetInnerHTML={{ __html: codeHTML }}
       />
     </div>

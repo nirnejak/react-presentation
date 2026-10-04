@@ -149,7 +149,7 @@ const Deck: React.FC<Props> = ({ slides, sourceLink }) => {
   return (
     <>
       <section
-        className="relative grid h-screen place-content-center"
+        className="relative grid h-screen place-content-center print:hidden"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -223,6 +223,18 @@ const Deck: React.FC<Props> = ({ slides, sourceLink }) => {
           </div>
         )}
       </section>
+
+      {/* Every slide on its own page when printing / saving as PDF */}
+      <div className="hidden print:block">
+        {slides.map((printSlide) => (
+          <div
+            key={printSlide.id}
+            className="print-slide grid h-screen place-content-center not-last:break-after-page"
+          >
+            {printSlide.content}
+          </div>
+        ))}
+      </div>
     </>
   )
 }

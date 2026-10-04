@@ -33,6 +33,7 @@ const MultiImage: React.FC<Props> = ({ images, className }) => {
             src={image.src}
             alt={image.alt}
             placeholder="blur"
+            loading="eager"
             sizes="(min-width: 768px) 330px, 50vw"
           />
         </motion.div>

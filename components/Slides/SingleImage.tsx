@@ -17,6 +17,7 @@ const SingleImage: React.FC<Props> = ({ image, alt, className }) => {
         src={image}
         alt={alt}
         placeholder="blur"
+        loading="eager"
         sizes="(min-width: 768px) 1020px, 100vw"
         // Cap the height so tall or wide images stay clear of the footer
         className="mx-auto h-auto max-h-[75vh] w-auto max-w-full object-contain"

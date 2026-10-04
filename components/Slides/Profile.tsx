@@ -30,6 +30,7 @@ const Profile: React.FC<Props> = ({ profiles, className }) => {
             src={profile.avatar}
             alt=""
             placeholder="blur"
+            loading="eager"
             sizes="192px"
             className="mb-8 size-32 rounded-full object-cover md:size-48"
           />
