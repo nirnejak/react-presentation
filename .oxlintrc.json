@@ -17,7 +17,8 @@
   },
   "rules": {
     "import/no-unassigned-import": "off",
-    "jsx-a11y/prefer-tag-over-role": "off"
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "ignorePatterns": [".next", "out", "build", "next-env.d.ts"]
 }

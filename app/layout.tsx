@@ -8,7 +8,7 @@ import classNames from "@/utils/classNames"
 import "./main.css"
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#ffffff",
 }
 
 interface Props {

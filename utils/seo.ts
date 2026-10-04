@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 
-export const BASE_URL = "https://example.com" // Don't include slash at the end
+export const BASE_URL = "https://react-presentation-maker.vercel.app" // Don't include slash at the end
+export const SITE_NAME = "React Presentation"
 
 interface MetadataArgs {
   path: string
@@ -15,26 +16,27 @@ const getMetadata = ({
   description,
   image,
 }: MetadataArgs): Metadata => {
-  const metaTitle = title
-  const metaDescription = description
-  const metaImage = image ?? `${BASE_URL}/cover.png`
+  // Without an explicit image, app/opengraph-image.tsx is used
+  const images = image !== undefined ? { images: [image] } : {}
 
   const metadata: Metadata = {
-    title: metaTitle,
-    description: metaDescription,
+    metadataBase: new URL(BASE_URL),
+    title,
+    description,
 
-    applicationName: "<Application Name>",
-    creator: "<Creator Name>",
-    authors: [{ name: "<Author Name>", url: "<Author Name or Email>" }],
+    applicationName: SITE_NAME,
+    creator: "Jitendra Nirnejak",
+    authors: [{ name: "Jitendra Nirnejak", url: "https://nirnejak.com" }],
     robots:
       "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
     keywords: [
+      "React",
+      "Presentation",
+      "Slides",
       "Next.js",
       "TailwindCSS",
-      "Framer Motion",
+      "Motion",
       "TypeScript",
-      "Akar Icons",
-      "JavaScript",
     ],
 
     icons: {
@@ -42,42 +44,31 @@ const getMetadata = ({
       shortcut: "/icons/icon-512x512.png",
       apple: "/icons/icon-512x512.png",
     },
-    manifest: `${BASE_URL}/manifest.json`,
+    manifest: "/manifest.json",
 
     openGraph: {
       type: "website",
-      url: `${BASE_URL}${path}`,
-      siteName: "<Site Name>",
-      title: metaTitle,
-      description: metaDescription,
-      images: metaImage,
+      url: path,
+      siteName: SITE_NAME,
+      title,
+      description,
+      ...images,
     },
 
     twitter: {
       card: "summary_large_image",
-      site: "@site",
-      creator: "@creator",
-      title: metaTitle,
-      description: metaDescription,
-      images: metaImage,
+      site: "@nirnejak",
+      creator: "@nirnejak",
+      title,
+      description,
+      ...images,
     },
 
     appleWebApp: {
       capable: true,
-      title: metaTitle,
-      startupImage: metaImage,
+      title,
       statusBarStyle: "black-translucent",
     },
-
-    formatDetection: {
-      telephone: true,
-      date: true,
-      address: true,
-      email: true,
-      url: true,
-    },
-
-    appLinks: {},
   }
   return metadata
 }
