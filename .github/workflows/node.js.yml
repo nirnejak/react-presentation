@@ -1,4 +1,4 @@
-# Builds the Next.js app with Bun, then runs lint and format checks.
+# Runs lint, format checks and tests with Bun, then builds the Next.js app.
 # https://bun.sh/guides/runtime/cicd
 
 name: Next.js Build
@@ -22,5 +22,5 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run lint
       - run: bun run format:check
+      - run: bun run test
       - run: bun run build
-      # - run: bun test
