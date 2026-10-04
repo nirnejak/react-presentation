@@ -3,6 +3,7 @@ import { JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 import type * as React from "react"
 
+import MotionProvider from "@/components/MotionProvider"
 import classNames from "@/utils/classNames"
 
 import "./main.css"
@@ -47,7 +48,9 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         "overflow-x-hidden font-sans"
       )}
     >
-      <body>{children}</body>
+      <body>
+        <MotionProvider>{children}</MotionProvider>
+      </body>
     </html>
   )
 }
