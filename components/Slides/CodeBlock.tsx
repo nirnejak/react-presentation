@@ -1,7 +1,5 @@
-"use client"
-
-import { motion } from "motion/react"
-import * as React from "react"
+import * as motion from "motion/react-client"
+import type * as React from "react"
 import { type BundledLanguage, codeToHtml } from "shiki"
 
 import { fadeUp } from "@/utils/animation"
@@ -13,29 +11,28 @@ interface Props {
   className?: string
 }
 
-const CodeBlock: React.FC<Props> = ({
+// Strip surrounding blank lines and the indentation shared by every line,
+// so code can be written indented inside a template literal
+const dedent = (code: string): string => {
+  const lines = code.replace(/^\s*\n|\n\s*$/g, "").split("\n")
+  const indent = Math.min(
+    ...lines
+      .filter((line) => line.trim().length > 0)
+      .map((line) => line.search(/\S/))
+  )
+  return lines.map((line) => line.slice(indent)).join("\n")
+}
+
+const CodeBlock = async ({
   title,
   code,
   language = "typescript",
   className,
-}) => {
-  const [codeHTML, setCodeHTML] = React.useState("")
-
-  React.useEffect(() => {
-    const generateCodeHTML = async (): Promise<void> => {
-      if (code.length > 0) {
-        const codeMarkup = await codeToHtml(code, {
-          lang: language,
-          theme: "plastic",
-        })
-        setCodeHTML(codeMarkup)
-      } else {
-        setCodeHTML("")
-      }
-    }
-
-    generateCodeHTML()
-  }, [code, language])
+}: Props): Promise<React.ReactElement> => {
+  const codeHTML = await codeToHtml(dedent(code), {
+    lang: language,
+    theme: "plastic",
+  })
 
   return (
     <div className={className}>
@@ -47,15 +44,9 @@ const CodeBlock: React.FC<Props> = ({
       </motion.h1>
       <motion.div
         {...fadeUp(0.1)}
-        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] py-2 text-sm md:min-h-[400px] md:w-full"
-      >
-        <pre className="-ml-11">
-          <code
-            dangerouslySetInnerHTML={{ __html: codeHTML }}
-            className="font-mono"
-          />
-        </pre>
-      </motion.div>
+        className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] p-5 text-sm md:min-h-[400px] md:w-full"
+        dangerouslySetInnerHTML={{ __html: codeHTML }}
+      />
     </div>
   )
 }

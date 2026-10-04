@@ -28,7 +28,7 @@ Run `bun run lint`, `bun run type-check`, and `bun run build` before completing 
 
 **Keyboard shortcuts**: `←`/`A` previous, `→`/`D` next, `F` footer, `C` controls, `P` page numbers.
 
-**Code slides**: `CodeBlock` highlights code client-side with Shiki (`plastic` theme).
+**Code slides**: `CodeBlock` highlights code on the server with Shiki (`plastic` theme).
 
 ## Code Style
 

@@ -144,7 +144,7 @@ Always run before completing work:
 
 **Presentation**: `components/Presentation.tsx` renders one slide at a time from the `slides` array and wraps around at both ends. Keyboard shortcuts: `←`/`A` previous, `→`/`D` next, `F` toggle footer, `C` toggle controls, `P` toggle page numbers.
 
-**Code highlighting**: `components/Slides/CodeBlock.tsx` uses Shiki (`codeToHtml`, `plastic` theme) on the client.
+**Code highlighting**: `components/Slides/CodeBlock.tsx` is an async server component that highlights code with Shiki (`codeToHtml`, `plastic` theme) at build time; indentation inside the `code` template literal is stripped automatically.
 
 **SEO**: `utils/seo.ts` builds page `Metadata`; update `BASE_URL` and the placeholder names before deploying.
 
