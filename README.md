@@ -20,6 +20,19 @@
 
 - `<Wrapper></Wrapper>` - A wrapper components with appropriate spacing to wrap your slide/regular components
 
+## Controls
+
+| Key                    | Action              |
+| ---------------------- | ------------------- |
+| `→` / `D` / `PageDown` | Next slide          |
+| `←` / `A` / `PageUp`   | Previous slide      |
+| `Shift` + `F`          | Toggle fullscreen   |
+| `F`                    | Toggle footer       |
+| `C`                    | Toggle controls     |
+| `P`                    | Toggle page numbers |
+
+Swipe left/right to navigate on touch screens. The current slide is kept in the URL (`?slide=3`), so refreshing or sharing a link opens the same slide.
+
 ## Additional Packages Used
 
 - **Tailwind CSS** - for styling

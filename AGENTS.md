@@ -142,7 +142,9 @@ Always run before completing work:
 
 ## Architecture Details
 
-**Presentation**: `components/Presentation.tsx` renders one slide at a time from the `slides` array and wraps around at both ends. Keyboard shortcuts: `←`/`A` previous, `→`/`D` next, `F` toggle footer, `C` toggle controls, `P` toggle page numbers.
+**Presentation**: `components/Presentation.tsx` renders one slide at a time from the `slides` array and wraps around at both ends. The current slide lives in the URL as `?slide=N` (1-based), read with `useSyncExternalStore`, so refreshing or sharing a link keeps the slide.
+
+Controls: `←`/`A`/`PageUp` previous, `→`/`D`/`PageDown` next (presentation clickers send PageUp/PageDown), swipe left/right on touch screens, `F` toggle footer, `Shift+F` toggle fullscreen, `C` toggle controls, `P` toggle page numbers.
 
 **Code highlighting**: `components/Slides/CodeBlock.tsx` is an async server component that highlights code with Shiki (`codeToHtml`, `plastic` theme) at build time; indentation inside the `code` template literal is stripped automatically.
 

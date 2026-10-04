@@ -26,7 +26,7 @@ Run `bun run lint`, `bun run type-check`, and `bun run build` before completing 
 - `utils/` — Animation presets (`animation.ts`), `classNames` helper, SEO metadata (`seo.ts`)
 - `app/main.css` — Tailwind v4 global styles, theme, custom animations, custom cursor
 
-**Keyboard shortcuts**: `←`/`A` previous, `→`/`D` next, `F` footer, `C` controls, `P` page numbers.
+**Navigation**: `←`/`A`/`PageUp` previous, `→`/`D`/`PageDown` next (clickers send PageUp/PageDown), swipe on touch screens. `F` footer, `Shift+F` fullscreen, `C` controls, `P` page numbers. The current slide is synced to `?slide=N` (1-based) via `useSyncExternalStore`, so the URL is the source of truth.
 
 **Code slides**: `CodeBlock` highlights code on the server with Shiki (`plastic` theme).
 
