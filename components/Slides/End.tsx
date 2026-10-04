@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   username: string
@@ -11,52 +9,29 @@ interface Props {
 }
 
 const End: React.FC<Props> = ({ username, className }) => {
-  const { ref, controls, variants } = useFadeUp()
+  const links = [
+    { prefix: "", suffix: ".com" },
+    { prefix: "twitter.com/", suffix: "" },
+    { prefix: "github.com/", suffix: "" },
+    { prefix: "dribbble.com/", suffix: "" },
+  ]
 
   return (
-    <div ref={ref} className={className}>
+    <div className={className}>
       <motion.h1
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        {...fadeUp()}
         className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl"
       >
         Thank You
       </motion.h1>
       <div className="mt-5 flex flex-col gap-1 text-xl text-gray-400 md:mt-10 md:gap-3 md:text-3xl">
-        <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
-        >
-          <span className="text-gray-900">{username}</span>.com
-        </motion.p>
-        <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{ delay: 0.15, duration: 0.4, type: "spring" }}
-        >
-          twitter.com/<span className="text-gray-900">{username}</span>
-        </motion.p>
-        <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{ delay: 0.2, duration: 0.4, type: "spring" }}
-        >
-          github.com/<span className="text-gray-900">{username}</span>
-        </motion.p>
-        <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{ delay: 0.25, duration: 0.4, type: "spring" }}
-        >
-          dribbble.com/<span className="text-gray-900">{username}</span>
-        </motion.p>
+        {links.map(({ prefix, suffix }, index) => (
+          <motion.p key={prefix} {...fadeUp(0.1 + 0.05 * index)}>
+            {prefix}
+            <span className="text-gray-900">{username}</span>
+            {suffix}
+          </motion.p>
+        ))}
       </div>
     </div>
   )

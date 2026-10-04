@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 import classNames from "@/utils/classNames"
 
 interface IProfile {
@@ -19,24 +17,12 @@ interface Props {
 }
 
 const Profile: React.FC<Props> = ({ profiles, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
-    <div
-      ref={ref}
-      className={classNames("grid grid-cols-2 gap-5 md:gap-12", className)}
-    >
+    <div className={classNames("grid grid-cols-2 gap-5 md:gap-12", className)}>
       {profiles?.map((profile, index) => (
         <motion.div
           key={profile.name}
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{
-            delay: 0.1 * (index + 1),
-            duration: 0.4,
-            type: "spring",
-          }}
+          {...fadeUp(0.1 * (index + 1))}
           className="flex flex-col items-center"
         >
           <div

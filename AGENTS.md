@@ -43,22 +43,21 @@ components/
 ├── Wrapper.tsx         # Fade-up wrapper for regular (non-slide) components
 ├── Slides/             # Reusable slide components (Cover, Points, CodeBlock, ...)
 └── demo/               # Demo components rendered as slides
-hooks/                  # Custom React hooks (useFadeUp)
-utils/                  # classNames helper, SEO metadata
+utils/                  # Animation presets, classNames helper, SEO metadata
 assets/                 # Icons used from CSS (custom cursor)
 fonts/                  # Local Satoshi variable fonts
 public/                 # Static assets
 ```
 
-Server components by default; use `"use client"` directive only when needed (all slides are client components because they animate).
+Server components by default; use `"use client"` directive only when needed. Slides stay server components by importing motion from `motion/react-client`.
 
 ### Import Patterns
 
 ```typescript
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 import classNames from "@/utils/classNames"
 ```
 
@@ -70,31 +69,22 @@ import classNames from "@/utils/classNames"
 ### Slide Component Pattern
 
 ```typescript
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   title: string
+  subtitle: string
   className?: string
 }
 
-const Title: React.FC<Props> = ({ title, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
+const Title: React.FC<Props> = ({ title, subtitle, className }) => {
   return (
-    <div ref={ref} className={className}>
-      <motion.h1
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
-      >
-        {title}
-      </motion.h1>
+    <div className={className}>
+      <motion.h1 {...fadeUp()}>{title}</motion.h1>
+      <motion.p {...fadeUp(0.1)}>{subtitle}</motion.p>
     </div>
   )
 }
@@ -104,7 +94,8 @@ export default Title
 
 - Use functional components with `React.FC<Props>` and a default export
 - Every slide accepts an optional `className` for width/padding set from `app/page.tsx`
-- Animate with `useFadeUp` + `motion` elements; stagger children with increasing `delay` (0.1 steps)
+- Animate by spreading `fadeUp(delay)` onto `motion` elements; stagger children with increasing `delay` (0.1 steps)
+- Use `BASE_TRANSITION` from `utils/animation.ts` for any other motion
 - Wrap non-slide components in `<Wrapper>` to get the same fade-up entrance
 - Add new slides to the `slides` array in `app/page.tsx` with a unique `key`
 - Use `classNames` utility only when merging base classes with `className`
@@ -112,11 +103,10 @@ export default Title
 ### Naming Conventions
 
 - **Components**: PascalCase (`CodeBlock`, `QuoteBlock`)
-- **Hooks**: camelCase with `use` prefix (`useFadeUp`)
 - **Variables**: camelCase (`currentSlide`)
 - **Constants**: UPPER_SNAKE_CASE (`BASE_URL`)
 - **Types**: PascalCase (`Props`)
-- **Files**: PascalCase for components, camelCase for hooks and utilities
+- **Files**: PascalCase for components, camelCase for utilities
 
 ### TypeScript Guidelines
 
@@ -140,7 +130,7 @@ oxlint handles linting and oxfmt handles formatting (no ESLint/Prettier/Biome). 
 - Custom animations using `@keyframes` and `--animate-*` variables
 - Use CSS custom properties (`--sans-font`, `--mono-font`)
 - Include `antialiased` for text quality
-- Animations: Motion (`motion/react`) via the `useFadeUp` hook
+- Animations: Motion (`motion/react-client`) with presets from `utils/animation.ts`
 
 ## Quality Assurance
 

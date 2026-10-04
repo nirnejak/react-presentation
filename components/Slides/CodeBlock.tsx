@@ -4,7 +4,7 @@ import { motion } from "motion/react"
 import * as React from "react"
 import { type BundledLanguage, codeToHtml } from "shiki"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   title: string
@@ -19,8 +19,6 @@ const CodeBlock: React.FC<Props> = ({
   language = "typescript",
   className,
 }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   const [codeHTML, setCodeHTML] = React.useState("")
 
   React.useEffect(() => {
@@ -40,21 +38,15 @@ const CodeBlock: React.FC<Props> = ({
   }, [code, language])
 
   return (
-    <div ref={ref} className={className}>
+    <div className={className}>
       <motion.h1
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        {...fadeUp()}
         className="text-4xl/normal font-bold tracking-tight text-gray-900 md:text-5xl"
       >
         {title}
       </motion.h1>
       <motion.div
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
+        {...fadeUp(0.1)}
         className="mt-4 max-h-[70vh] w-[calc(100vw-24px)] overflow-auto rounded-2xl bg-[#21252B] py-2 text-sm md:min-h-[400px] md:w-full"
       >
         <pre className="-ml-11">

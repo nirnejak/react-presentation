@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 import classNames from "@/utils/classNames"
 
 interface Props {
@@ -12,15 +10,9 @@ interface Props {
 }
 
 const Wrapper: React.FC<Props> = ({ children, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
     <motion.div
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={variants}
-      transition={{ delay: 0, duration: 0.4, type: "spring" }}
+      {...fadeUp()}
       className={classNames("max-w-[680px]", className)}
     >
       {children}

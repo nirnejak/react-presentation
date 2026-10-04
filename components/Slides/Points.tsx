@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   title: string
@@ -12,15 +10,10 @@ interface Props {
 }
 
 const Points: React.FC<Props> = ({ title, points, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
-    <div ref={ref} className={className}>
+    <div className={className}>
       <motion.h1
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        {...fadeUp()}
         className="text-4xl/normal font-bold tracking-tight text-gray-900 md:text-5xl/normal"
       >
         {title}
@@ -29,14 +22,7 @@ const Points: React.FC<Props> = ({ title, points, className }) => {
         {points?.map((point, index) => (
           <motion.li
             key={point}
-            initial="hidden"
-            animate={controls}
-            variants={variants}
-            transition={{
-              delay: 0.1 * (index + 1),
-              duration: 0.4,
-              type: "spring",
-            }}
+            {...fadeUp(0.1 * (index + 1))}
             className="text-xl text-gray-500 md:text-3xl"
           >
             {point}

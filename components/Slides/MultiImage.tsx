@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 import classNames from "@/utils/classNames"
 
 interface Props {
@@ -12,11 +10,8 @@ interface Props {
 }
 
 const MultiImage: React.FC<Props> = ({ images, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
     <div
-      ref={ref}
       className={classNames(
         "grid grid-cols-2 items-center gap-5 md:gap-20",
         className
@@ -25,14 +20,7 @@ const MultiImage: React.FC<Props> = ({ images, className }) => {
       {images?.map((image, index) => (
         <motion.img
           key={image}
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{
-            delay: 0.1 * (index + 1),
-            duration: 0.4,
-            type: "spring",
-          }}
+          {...fadeUp(0.1 * (index + 1))}
           src={image}
           className={index % 2 === 0 ? "mb-10" : "mt-20"}
         />

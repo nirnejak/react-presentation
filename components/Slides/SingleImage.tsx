@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   image?: string
@@ -11,21 +9,9 @@ interface Props {
 }
 
 const SingleImage: React.FC<Props> = ({ image, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
-    <div ref={ref} className={className}>
-      <motion.img
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{
-          delay: 0.1,
-          duration: 0.4,
-          type: "spring",
-        }}
-        src={image}
-      />
+    <div className={className}>
+      <motion.img {...fadeUp(0.1)} src={image} />
     </div>
   )
 }

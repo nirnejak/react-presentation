@@ -1,9 +1,7 @@
-"use client"
-
-import { motion } from "motion/react"
+import * as motion from "motion/react-client"
 import type * as React from "react"
 
-import useFadeUp from "@/hooks/useFadeUp"
+import { fadeUp } from "@/utils/animation"
 
 interface Props {
   title: string
@@ -12,25 +10,17 @@ interface Props {
 }
 
 const About: React.FC<Props> = ({ title, subtitle, className }) => {
-  const { ref, controls, variants } = useFadeUp()
-
   return (
-    <div ref={ref} className={className}>
+    <div className={className}>
       <motion.h1
-        initial="hidden"
-        animate={controls}
-        variants={variants}
-        transition={{ delay: 0, duration: 0.4, type: "spring" }}
+        {...fadeUp()}
         className="text-4xl/normal font-bold tracking-tight text-gray-900 md:text-5xl"
       >
         {title}
       </motion.h1>
       {subtitle !== undefined && (
         <motion.p
-          initial="hidden"
-          animate={controls}
-          variants={variants}
-          transition={{ delay: 0.1, duration: 0.4, type: "spring" }}
+          {...fadeUp(0.1)}
           className="mt-1 text-xl/normal text-gray-500 md:mt-4 md:text-3xl"
         >
           {subtitle}

@@ -23,8 +23,7 @@ Run `bun run lint`, `bun run type-check`, and `bun run build` before completing 
 - `components/Presentation.tsx` — Slide navigation, keyboard shortcuts, footer controls
 - `components/Slides/` — Reusable slide components (Cover, QuoteBlock, Profile, SingleImage, Points, MultiImage, CodeBlock, About, End)
 - `components/Wrapper.tsx` — Fade-up wrapper for regular components used as slides (see `components/demo/`)
-- `hooks/useFadeUp.tsx` — In-view fade-up animation shared by all slides
-- `utils/` — `classNames` helper and SEO metadata (`seo.ts`)
+- `utils/` — Animation presets (`animation.ts`), `classNames` helper, SEO metadata (`seo.ts`)
 - `app/main.css` — Tailwind v4 global styles, theme, custom animations, custom cursor
 
 **Keyboard shortcuts**: `←`/`A` previous, `→`/`D` next, `F` footer, `C` controls, `P` page numbers.
@@ -48,5 +47,5 @@ See `AGENTS.md` for detailed slide component patterns, import conventions, and n
 - Namespace imports for React: `import * as React from "react"`
 - Type-only imports: `import type { Metadata } from "next"`
 - Components: `React.FC<Props>` with default export, optional `className` prop
-- Slides animate with `useFadeUp` + `motion` elements, staggering children by `delay`
+- Slides are server components using `motion/react-client`; spread `fadeUp(delay)` from `utils/animation.ts` onto motion elements
 - Styling: Tailwind v4 with `@theme` directives in `app/main.css`
