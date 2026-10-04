@@ -11,22 +11,24 @@ bun run lint             # oxlint
 bun run lint:fix         # oxlint with auto-fix
 bun run format           # oxfmt
 bun run type-check       # TypeScript type checking
+bun run test             # Bun tests (utils/*.test.ts)
 ```
 
-Run `bun run lint`, `bun run type-check`, and `bun run build` before completing work.
+Run `bun run lint`, `bun run type-check`, `bun run test`, and `bun run build` before completing work.
 
 ## Architecture
 
 **Next.js 16 App Router** with React 19 and React Compiler enabled. Server components by default; use `"use client"` directive only when needed.
 
-- `app/page.tsx` — The deck: a `slides` array of slide components passed to `<Presentation />`
-- `components/Presentation.tsx` — Slide navigation, keyboard shortcuts, footer controls
+- `app/page.tsx` — The deck: a `slides` array of `{ id, content, notes? }` passed to `<Presentation />`
+- `components/Presentation.tsx` — Deck (navigation, transitions, progress, footer, print layout); switches to `PresenterView` for `?mode=presenter` and `SlideEmbed` for `?mode=embed`
+- `hooks/useSlides.ts` — URL-backed slide state (`?slide=N`), synced across windows with `BroadcastChannel`
 - `components/Slides/` — Reusable slide components (Cover, QuoteBlock, Profile, SingleImage, Points, MultiImage, CodeBlock, About, End)
 - `components/Wrapper.tsx` — Fade-up wrapper for regular components used as slides (see `components/demo/`)
-- `utils/` — Animation presets (`animation.ts`), `classNames` helper, SEO metadata (`seo.ts`)
+- `utils/` — Slide helpers (`slides.ts`), animation presets (`animation.ts`), `dedent`, `classNames`, SEO metadata (`seo.ts`)
 - `app/main.css` — Tailwind v4 global styles, theme, custom animations, custom cursor
 
-**Navigation**: `←`/`A`/`PageUp` previous, `→`/`D`/`PageDown` next (clickers send PageUp/PageDown), swipe on touch screens. `F` footer, `Shift+F` fullscreen, `C` controls, `P` page numbers. The current slide is synced to `?slide=N` (1-based) via `useSyncExternalStore`, so the URL is the source of truth.
+**Navigation**: `←`/`A`/`PageUp` previous, `→`/`D`/`PageDown` next (clickers send PageUp/PageDown), swipe on touch screens. `F` footer, `Shift+F` fullscreen, `C` controls, `P` page numbers, `S` presenter view (timer, next-slide preview, notes). Printing renders one slide per 1280×720 page. The current slide is synced to `?slide=N` (1-based) via `useSyncExternalStore`, so the URL is the source of truth.
 
 **Code slides**: `CodeBlock` highlights code on the server with Shiki (`plastic` theme).
 

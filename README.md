@@ -30,8 +30,31 @@
 | `F`                    | Toggle footer       |
 | `C`                    | Toggle controls     |
 | `P`                    | Toggle page numbers |
+| `S`                    | Open presenter view |
 
 Swipe left/right to navigate on touch screens. The current slide is kept in the URL (`?slide=3`), so refreshing or sharing a link opens the same slide.
+
+## Adding Slides
+
+Slides are defined in `app/page.tsx`:
+
+```tsx
+const slides: Slide[] = [
+  {
+    id: "cover",
+    content: <Cover title="Welcome" />,
+    notes: "Speaker notes, shown in the presenter view",
+  },
+]
+```
+
+## Presenter View
+
+Press `S` to open the presenter view in a new window: a timer (`R` to reset), the current and next slide, and the speaker notes. Navigating in either window moves both.
+
+## Export to PDF
+
+Print the page (`Cmd`/`Ctrl` + `P`) and save as PDF. Each slide becomes its own 16:9 page.
 
 ## Additional Packages Used
 
@@ -69,6 +92,12 @@ bun run lint
 
 ```bash
 bun run format
+```
+
+**Run tests**
+
+```bash
+bun run test
 ```
 
 **Check TypeScript issues**
